@@ -1,0 +1,19 @@
+.daterangepicker {
+    z-index: 9999;
+
+    .calendar-time {
+
+        &::after {
+            content: "h";
+            font-size: 1.6rem;
+        }
+        
+        select {
+            font-size: 1.6rem;
+
+            option {
+                font-size: inherit;
+            }
+        }
+    }
+}

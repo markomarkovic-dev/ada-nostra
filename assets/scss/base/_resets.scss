@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Chivo', sans-serif;
+  }
+
+  html {
+    overflow-x: clip;
+  }
+  
+  p, a, li, button, input, textarea, span, strong, label, select {
+    font-size: 1.6rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: initial;
+    transition: all 0.2s linear;
+  
+    &:hover {
+      color: $c-red;
+    }
+  }
+  
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+
+    > strong {
+      color: $c-red;
+      font-size: inherit;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Big River Sample';
+  }
+
+  .img-fluid {
+    width: 100%;
+    height: auto;
+  }
