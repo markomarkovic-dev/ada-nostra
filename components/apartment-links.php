@@ -1,7 +1,7 @@
 <div class="apartments-grid">
                 <div class="apartment-block">
                     <img src="assets/images/apartment-1/ap1.jpg" class="feature-image" alt="">
-                    <a href="#" class="apartment-link"><img src="assets/icons/eye.svg" alt=""><span>Vidi više</span></a>
+                    <a href="apartman-1" class="apartment-link"><img src="assets/icons/eye.svg" alt=""><span>Vidi više</span></a>
                     <div class="apartment-drawer">
                         <div class="apartment-drawer-left">
                             <div class="apartment-details">

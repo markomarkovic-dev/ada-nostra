@@ -65,6 +65,10 @@ main {
 
 .main-slider {
     position: relative;
+    overflow: clip;
+    @media(min-width: 992px) {
+        height: calc(100vh - 24rem);
+    }
 
     img {
         object-fit: cover;

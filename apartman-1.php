@@ -10,7 +10,7 @@
                 <div class="slideshow">
                 <div class="slider">
                     <?php
-                        landingSlider($apartmentMain, "apartment-main");
+                        landingSlider($apartment1, "apartment-1");
                     ?>
                 </div>
             </div>

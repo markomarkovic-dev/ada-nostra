@@ -62,6 +62,13 @@
 			'supporters' => 'Ko nas je podržao',
 			'mladen' => 'It was such a pleasure to be involved with the CVU. The project was amazing, and the organization was top notch. I loved getting to hear so many wonderful minds, and work with CVU crew. Congratulations to all involved for producing such a tremendous event.'
 		),
+
+		'apartman-1' => array(
+			'title' => 'Apartman 1', 
+		  'description' => 'Prvi apartman', 
+		  //content
+
+	  ),
 );
 
 ?>

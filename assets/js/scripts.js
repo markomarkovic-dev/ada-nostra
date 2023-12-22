@@ -11,14 +11,14 @@ $(document).ready(function ($) {
     $('.cookie-consent-banner').remove();
   });
 
-  if ($(document).scrollTop() >= 30) {
+  if ($(document).scrollTop() >= 230) {
     $('header').addClass('header-sticky');
   } else {
     $('header').removeClass('header-sticky');
   }
 
   $(document).scroll(function () {
-    if ($(this).scrollTop() >= 30) {
+    if ($(this).scrollTop() >= 230) {
       $('header').addClass('header-sticky');
     } else {
       $('header').removeClass('header-sticky');
