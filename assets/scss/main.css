@@ -186,6 +186,23 @@ main {
   }
 }
 
+.apartment-data-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .apartment-data-container {
+    position: absolute;
+    z-index: 10;
+    bottom: 8rem;
+  }
+}
+.apartment-data-container .apartment-drawer {
+  position: relative;
+  gap: 3rem;
+}
+
 .sup-heading,
 .section-heading,
 .sup-icon {
@@ -257,7 +274,7 @@ main {
   font-size: 2.4rem;
   color: #231F20;
   max-width: 75.5rem;
-  font-weight: 400;
+  font-weight: 300;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 7.1rem;
@@ -295,6 +312,7 @@ main {
 }
 .features-container .features-item span {
   text-align: center;
+  color: #7A7D8D;
 }
 
 .apartments-grid {
@@ -306,6 +324,27 @@ main {
   .apartments-grid {
     grid-template-columns: 1fr;
   }
+}
+@media (min-width: 981px) {
+  .apartments-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(39rem, 1fr));
+  }
+}
+
+.gallery-modal .feature-image,
+.gallery-modal .apartment-drawer {
+  transition: all 0.2s ease-out;
+}
+.gallery-modal img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  overflow: hidden;
+  aspect-ratio: 1;
 }
 
 .apartment-block {
@@ -348,57 +387,6 @@ main {
     display: none;
   }
 }
-.apartment-block .apartment-drawer {
-  background-color: rgba(241, 241, 241, 0.93);
-  padding: 1.2rem 1.8rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.apartment-block .apartment-drawer img {
-  max-height: 2.4rem;
-}
-.apartment-block .apartment-drawer .apartment-price,
-.apartment-block .apartment-drawer .apartment-details {
-  display: flex;
-  flex-direction: column;
-}
-.apartment-block .apartment-drawer .apartment-details h3 {
-  font-size: 2rem;
-  font-family: "Chivo", sans-serif;
-  margin-bottom: 1.2rem;
-}
-.apartment-block .apartment-drawer .apartment-details-guests {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-.apartment-block .apartment-drawer .apartment-details-guests img {
-  width: initial;
-  margin-bottom: 0.5rem;
-}
-.apartment-block .apartment-drawer .apartment-details-guests span {
-  font-size: 1.8rem;
-}
-.apartment-block .apartment-drawer .apartment-details-guests strong {
-  font-size: 3.2rem;
-  line-height: 1;
-  margin-right: 0.8rem;
-}
-.apartment-block .apartment-drawer .apartment-price {
-  text-align: right;
-}
-.apartment-block .apartment-drawer .apartment-price span {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-.apartment-block .apartment-drawer .apartment-price strong {
-  font-size: 3.2rem;
-}
 @media (max-width: 991px) {
   .apartment-block-blue, .apartment-block-yellow {
     display: none;
@@ -425,6 +413,58 @@ main {
 }
 .apartment-block:hover .apartment-drawer {
   transform: translateY(0);
+}
+
+.apartment-drawer {
+  background-color: rgba(241, 241, 241, 0.93);
+  padding: 1.2rem 1.8rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.apartment-drawer img {
+  max-height: 2.4rem;
+}
+.apartment-drawer .apartment-price,
+.apartment-drawer .apartment-details {
+  display: flex;
+  flex-direction: column;
+}
+.apartment-drawer .apartment-details h3 {
+  font-size: 2rem;
+  font-family: "Chivo", sans-serif;
+  margin-bottom: 1.2rem;
+}
+.apartment-drawer .apartment-details-guests {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.apartment-drawer .apartment-details-guests img {
+  width: initial;
+  margin-bottom: 0.5rem;
+}
+.apartment-drawer .apartment-details-guests span {
+  font-size: 1.8rem;
+}
+.apartment-drawer .apartment-details-guests strong {
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-right: 0.8rem;
+}
+.apartment-drawer .apartment-price {
+  text-align: right;
+}
+.apartment-drawer .apartment-price span {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.apartment-drawer .apartment-price strong {
+  font-size: 3.2rem;
 }
 
 @keyframes showSlow {
@@ -816,6 +856,9 @@ main {
   inset: 50px;
   z-index: 9999;
   isolation: isolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 991px) {
   .image-modal {
@@ -827,62 +870,114 @@ main {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 12, 22, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
-.image-modal img {
+.image-modal .current-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.image-modal .next-prev-image {
-  display: flex;
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-}
-.image-modal .next-prev-image .next-image,
-.image-modal .next-prev-image .prev-image {
-  flex-basis: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  padding: 1.5rem;
+  max-height: 85vh;
+  position: relative;
 }
-.image-modal .next-prev-image .next-image [class^=ri-],
-.image-modal .next-prev-image .prev-image [class^=ri-] {
-  display: none;
-  font-size: 10rem;
+.image-modal img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  max-width: calc(100% - 3rem);
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 85vh;
+}
+@media (max-width: 991px) {
+  .image-modal img {
+    max-width: calc(100% - 7.3rem);
+  }
+}
+.image-modal .next-image,
+.image-modal .prev-image {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+.image-modal .next-image img,
+.image-modal .prev-image img {
+  display: block;
+  max-height: 3rem;
+  min-width: 3rem;
   color: rgba(255, 255, 255, 0.5);
 }
 @media (max-width: 991px) {
-  .image-modal .next-prev-image .next-image [class^=ri-],
-  .image-modal .next-prev-image .prev-image [class^=ri-] {
-    display: block;
-  }
-}
-.image-modal .next-prev-image .next-image:hover [class^=ri-],
-.image-modal .next-prev-image .prev-image:hover [class^=ri-] {
-  display: block;
-}
-@media (max-width: 991px) {
-  .image-modal .next-prev-image .next-image {
-    justify-content: flex-end;
+  .image-modal .next-image img,
+  .image-modal .prev-image img {
+    height: 100%;
   }
 }
 @media (max-width: 991px) {
-  .image-modal .next-prev-image .prev-image {
-    justify-content: flex-start;
+  .image-modal .next-image,
+  .image-modal .prev-image {
+    padding: 1rem;
   }
+}
+.image-modal .next-image {
+  right: 0;
+}
+.image-modal .prev-image {
+  left: 0;
 }
 .image-modal .image-close {
   color: white;
   position: fixed;
-  top: 0;
-  right: 0;
-  font-size: 7rem;
+  bottom: 2rem;
   z-index: 2;
   cursor: pointer;
+  max-height: 2.4rem;
+}
+.image-modal.modal-out .current-image img {
+  animation: imageOut 0.4s ease-in forwards;
+}
+.image-modal.modal-out::after {
+  animation: blurOut 0.4s linear 0.4s forwards;
+}
+
+@keyframes imageOut {
+  from {
+    max-height: 85vh;
+    transform: translate(0, 0);
+  }
+  to {
+    max-height: 0vh;
+    transform: translate(50vw, -68vh);
+  }
+}
+@keyframes blurOut {
+  from {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    background-color: rgba(0, 12, 22, 0.5);
+  }
+  to {
+    -webkit-backdrop-filter: blur(0);
+            backdrop-filter: blur(0);
+    background-color: rgba(0, 12, 22, 0);
+  }
+}
+.feature-image {
+  width: 100%;
 }
 
 input, textarea {

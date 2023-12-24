@@ -10,7 +10,7 @@
                 <div class="slideshow">
                 <div class="slider">
                     <?php
-                        landingSlider($apartmentMain, "apartment-main");
+                        landingSlider($homeSlider, "apartment-main");
                     ?>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     <section>
         <div class="section-container section-padding">
             <?php 
-                require 'components/apartment-links.php';
+                require 'components/apartment-grid.php';
             ?>
         </div>
     </section>

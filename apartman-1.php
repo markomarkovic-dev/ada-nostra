@@ -1,6 +1,8 @@
 <?php 
+    $apartmentId = "1";
     include 'includes/global-header.php'; 
     include 'components/slider.php';
+    include 'components/apartment-drawer.php';
 ?>
 
 <main>
@@ -10,35 +12,13 @@
                 <div class="slideshow">
                 <div class="slider">
                     <?php
-                        landingSlider($apartment1, "apartment-1");
+                        landingSlider($apartmentData[$apartmentId]["images"]["slider"], "apartment-$apartmentId");
                     ?>
                 </div>
             </div>
             </div>
-            <div class="reservation-container">
-                <div class="quick-reservation">
-                    <h2>Rezervišite termin!</h2>
-                    <div class="quick-reservation-form">
-                       <div class="input-wrapper input-wrapper-icon">
-                            <i class="fa-solid fa-calendar-week"></i>
-                            <label for="q-date-from">Dolazak</label>
-                            <input type="text" name="dates" id="q-date-from">
-                       </div>
-                       <div class="input-wrapper input-wrapper-icon">
-                            <i class="fa-solid fa-calendar-week"></i>
-                            <label for="q-date-to">Odlazak</label>
-                            <input type="text" name="dates" id="q-date-to">
-                       </div>
-                       <div class="input-wrapper input-wrapper-icon">
-                            <i class="fa-solid fa-user-group"></i>
-                            <label for="guest-count">Gosti</label>
-                            <input type="number" id="q-guest-count" min="1" value="1">
-                       </div>
-                       <div class="input-wrapper">
-                        <button id="pick-data" class="btn btn-primary modal-open" data-trigger="reservation">Rezerviši</button>
-                       </div>
-                    </div>
-                </div>
+            <div class="apartment-data-container">
+                 <?= apartmentDrawer($apartmentId);?>
             </div>
         </div>
     </section>
@@ -46,7 +26,8 @@
         <div class="section-container">
             <span class="sup-heading">Naša priča</span>
             <h2 class="section-heading">Ada Nostra <span>apartmani</span></h2>
-            <p class="section-desc">Posvećeni smo pružanju nezaboravnih iskustava gostima, profesionalna usluga i najbolje opremljeni apartmani.</p>
+            <p class="section-desc">Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan doživljaj uzvišenosti. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
+            <p class="section-desc">Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost. Nudimo vam prostor gdje se luksuz susreće s prirodom.</p>
         <div class="features-container">
             <div class="features-item">
                 <div class="features-item-image">
@@ -101,9 +82,28 @@
     </section>
     <section>
         <div class="section-container section-padding">
-            <?php 
-                require 'components/apartment-links.php';
-            ?>
+        <div class="apartments-grid apartments-grid-3 gallery-modal">
+                <?php 
+                foreach ($apartmentData[$apartmentId]["images"]["gallery"] as $image) {
+                    if($image == "blue-box") {
+                        echo '
+                            <div class="apartment-block apartment-block-blue"></div>
+                        ';
+                    } 
+                    
+                    elseif ($image == "red-box") {
+                        echo '
+                            <div class="apartment-block apartment-block-yellow"></div>
+                            ';
+                    } else {
+                        echo '<div class="item">
+                            <img src="assets/images/apartment-' . $apartmentId . '/' . $image . '" class="feature-image" alt="">
+                         </div>';
+                    }
+                    
+                };
+                ?>
+            </div>
         </div>
     </section>
     <section>
@@ -195,3 +195,4 @@
             picker.container.find(".calendar-table").hide();
         });
 </script>
+<script src="assets/js/gallery-modal.js"></script>

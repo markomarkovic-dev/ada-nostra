@@ -141,6 +141,23 @@ main {
     }
 }
 
+.apartment-data-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    @media(min-width: 992px) {
+        position: absolute;
+        z-index: 10;
+        bottom: 8rem;
+    }
+
+    .apartment-drawer {
+        position: relative;
+        gap: 3rem;
+    }
+}
+
 .sup-heading,
 .section-heading,
 .sup-icon {
@@ -211,7 +228,7 @@ main {
     font-size: 2.4rem;
     color: $c-black;
     max-width: 75.5rem;
-    font-weight: 400;
+    font-weight: 300;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 7.1rem;
@@ -251,6 +268,7 @@ main {
 
         span {
             text-align: center;
+            color: $c-lightgray;
         }
     }
 }
@@ -262,6 +280,29 @@ main {
 
     @media(max-width: 600px) {
         grid-template-columns: 1fr;
+    }
+
+    &-3 {
+        @media(min-width: 981px) {
+            grid-template-columns: repeat(auto-fit, minmax(39rem, 1fr));
+        }
+    }
+}
+
+.gallery-modal {
+    .feature-image,
+    .apartment-drawer {
+        transition: all .2s ease-out;
+    }
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(100%);
+        overflow: hidden;
+        aspect-ratio: 1;
     }
 }
 
@@ -305,69 +346,6 @@ main {
             display: none;
         }
     }
-    
-    .apartment-drawer {
-        background-color: rgba(#F1F1F1, .93);
-        padding: 1.2rem 1.8rem;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        img {
-            max-height: 2.4rem;
-        }
-
-        .apartment-price,
-        .apartment-details {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .apartment-details {
-            h3 {
-                font-size: 2rem;
-                font-family: 'Chivo', sans-serif;
-                margin-bottom: 1.2rem;
-            }
-
-            &-guests {
-                display: flex;
-                align-items: flex-end;
-                gap: .5rem;
-
-                img {
-                    width: initial;
-                    margin-bottom: .5rem;
-                }
-                span {
-                    font-size: 1.8rem;
-                }
-
-                strong {
-                    font-size: 3.2rem;
-                    line-height: 1;
-                    margin-right: .8rem;
-                }
-            }
-        }
-
-        .apartment-price {
-            text-align: right;
-
-            span {
-                font-size: 1.5rem;
-                margin-bottom: .5rem;
-            }
-
-            strong {
-                font-size: 3.2rem;
-            }
-        }
-    }
 
     &-blue,
     &-yellow {
@@ -403,6 +381,69 @@ main {
 
         .apartment-drawer {
             transform: translateY(0);
+        }
+    }
+}
+
+.apartment-drawer {
+    background-color: rgba(#F1F1F1, .93);
+    padding: 1.2rem 1.8rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    img {
+        max-height: 2.4rem;
+    }
+
+    .apartment-price,
+    .apartment-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .apartment-details {
+        h3 {
+            font-size: 2rem;
+            font-family: 'Chivo', sans-serif;
+            margin-bottom: 1.2rem;
+        }
+
+        &-guests {
+            display: flex;
+            align-items: flex-end;
+            gap: .5rem;
+
+            img {
+                width: initial;
+                margin-bottom: .5rem;
+            }
+            span {
+                font-size: 1.8rem;
+            }
+
+            strong {
+                font-size: 3.2rem;
+                line-height: 1;
+                margin-right: .8rem;
+            }
+        }
+    }
+
+    .apartment-price {
+        text-align: right;
+
+        span {
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+        }
+
+        strong {
+            font-size: 3.2rem;
         }
     }
 }

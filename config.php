@@ -4,6 +4,7 @@ $siteName = "Ada Nostra";
 $mainlang = 'sr';
 
 $siteUrl = "https://adanostra.com";
+include 'apartment-data.php';
 
 //posjeceni url
 $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -24,7 +25,7 @@ $pagename = basename($url);
 //naziv stranice/fajla bez ekstenzije
 //$pagename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $pagename); // potrebno u slucaju da url sadrzi .php ekstenziju
 //include odgovarajuceg jezika
-include('lang/lang-'.$language.'.php');
+include 'lang/lang-'.$language.'.php';
 // include('lang/lang-en.php');
 $jezici = array_filter(scandir('./lang'), function ($item) {
 	return !is_dir('./lang/' . $item);
