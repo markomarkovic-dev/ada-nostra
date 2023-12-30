@@ -155,6 +155,7 @@ main {
     .apartment-drawer {
         position: relative;
         gap: 3rem;
+        border: 4px solid $c-blue;
     }
 }
 
@@ -369,7 +370,26 @@ main {
     }
 
     &:hover {
-        .feature-image {
+        .feature-image, .gallery-item {
+            filter: grayscale(0);
+        }
+
+        .apartment-link {
+            @media(min-width: 992px) {
+                display: flex;
+            }
+        }
+
+        .apartment-drawer {
+            transform: translateY(0);
+        }
+    }
+}
+
+.gallery-item {
+    cursor: pointer;
+    &:hover {
+        .feature-image, .gallery-item {
             filter: grayscale(0);
         }
 
@@ -557,7 +577,7 @@ main {
 
 .img-building {
     object-fit: contain;
-    max-height: 80vh;
+    max-height: 70vh;
     opacity: 0;
 }
 
@@ -604,3 +624,46 @@ main {
         transform: translateX(0);
     }
 }
+
+.view360 {
+    display: flex;
+    justify-content: center;
+
+    @media(min-width: 992px) {
+        padding-top: 9rem;
+    }
+}
+
+.cookie-consent-banner {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    right: 0;
+    color: white;
+  
+    .cookie-wrapper {
+      background-color: rgba($c-black, 0.9);
+      border-radius: .8rem .8rem 0 0;
+      max-width: 80%;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  
+    p {
+      font-size: 1.2rem;
+    }
+  
+    .btn-wrapper {
+      display: flex;
+      gap: 1.5rem;
+    }
+  }

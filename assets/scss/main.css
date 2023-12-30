@@ -201,6 +201,7 @@ main {
 .apartment-data-container .apartment-drawer {
   position: relative;
   gap: 3rem;
+  border: 4px solid #2F3890;
 }
 
 .sup-heading,
@@ -403,7 +404,7 @@ main {
     transform: translateY(100%);
   }
 }
-.apartment-block:hover .feature-image {
+.apartment-block:hover .feature-image, .apartment-block:hover .gallery-item {
   filter: grayscale(0);
 }
 @media (min-width: 992px) {
@@ -412,6 +413,21 @@ main {
   }
 }
 .apartment-block:hover .apartment-drawer {
+  transform: translateY(0);
+}
+
+.gallery-item {
+  cursor: pointer;
+}
+.gallery-item:hover .feature-image, .gallery-item:hover .gallery-item {
+  filter: grayscale(0);
+}
+@media (min-width: 992px) {
+  .gallery-item:hover .apartment-link {
+    display: flex;
+  }
+}
+.gallery-item:hover .apartment-drawer {
   transform: translateY(0);
 }
 
@@ -570,7 +586,7 @@ main {
 .img-building {
   -o-object-fit: contain;
      object-fit: contain;
-  max-height: 80vh;
+  max-height: 70vh;
   opacity: 0;
 }
 
@@ -611,6 +627,48 @@ main {
     transform: translateX(0);
   }
 }
+.view360 {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .view360 {
+    padding-top: 9rem;
+  }
+}
+
+.cookie-consent-banner {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+  color: white;
+}
+.cookie-consent-banner .cookie-wrapper {
+  background-color: rgba(35, 31, 32, 0.9);
+  border-radius: 0.8rem 0.8rem 0 0;
+  max-width: 80%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .cookie-consent-banner .cookie-wrapper {
+    flex-direction: column;
+  }
+}
+.cookie-consent-banner p {
+  font-size: 1.2rem;
+}
+.cookie-consent-banner .btn-wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -1107,6 +1165,22 @@ input:focus, textarea:focus {
   background-color: #5E6278;
 }
 
+.btn-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.reservation-block .btn-center {
+  margin-bottom: 3rem;
+}
+.reservation-block .sup-heading {
+  margin-bottom: 3rem;
+}
+.reservation-block .section-text {
+  max-width: 85rem;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -1254,17 +1328,16 @@ input:focus, textarea:focus {
   transform: translate(-50%, -50%);
 }
 .slideshow .slick-dots {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   width: 40px;
   height: auto;
   bottom: auto;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  top: 10%;
+  right: 150px;
   left: auto;
   color: #fff;
-  display: block;
+  display: none !important;
 }
 .slideshow .slick-dots li {
   display: block;

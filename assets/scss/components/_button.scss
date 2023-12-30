@@ -27,3 +27,23 @@
         }
     }
 }
+
+.btn-center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.reservation-block {
+    .btn-center {
+        margin-bottom: 3rem;
+    }
+
+    .sup-heading {
+        margin-bottom: 3rem;
+    }
+
+    .section-text {
+        max-width: 85rem;
+    }
+}

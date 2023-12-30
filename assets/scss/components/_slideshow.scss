@@ -39,17 +39,16 @@
   }
   
   .slick-dots {
-    position: fixed;
+    position: absolute;
     z-index: 100;
     width: 40px;
     height: auto;
     bottom: auto;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    top: 10%;
+    right: 150px;
     left: auto;
     color: #fff;
-    display: block;
+    display: none !important;
     
     li {
       display: block;

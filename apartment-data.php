@@ -1,5 +1,4 @@
 <?php 
-
     $homeSlider = array(
         "ap1.jpg",
         "ap2.jpg",

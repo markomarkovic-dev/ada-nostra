@@ -19,11 +19,11 @@
                 require 'components/booking-social.php';
             ?>
             <div class="lang-select">
-                <a href="#">SR</a>
+                <a href="<?= switchLang('/' . $language . '/', '/sr/')?>" class=" <?= $language === 'sr' ? 'active' : '' ?>">SR</a>
                 <span>/</span>
-                <a href="#">EN</a>
+                <a href="<?= switchLang('/' . $language . '/', '/en/')?>" class=" <?= $language === 'en' ? 'active' : '' ?>">EN</a>
                 <span>/</span>
-                <a href="#">DE</a>
+                <a href="<?= switchLang('/' . $language . '/', '/de/')?>" class=" <?= $language === 'de' ? 'active' : '' ?>">DE</a>
             </div>
         </div>
     </div>

@@ -159,16 +159,11 @@
     include_once 'components/modal-reservation.php';
 ?>
 
-<?php
-    include_once 'components/modal-reservation.php';
-?>
-
-<script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/home.js"></script>
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script>
-    $('input[name="dates"]').daterangepicker( {
+    $('input[name="dates"], input[name="date-from"], input[name="date-to"]').daterangepicker( {
         <?php 
             include 'components/datepicker-settings.php';
         ?>

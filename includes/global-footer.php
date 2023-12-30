@@ -3,7 +3,7 @@
 		?>
 		<script src="assets/js/contact-form-validator.js"></script>
 		<script>
-			$('.contact-form').validator();
+			$('#reservation').validator();
 		</script>
 		<script src="assets/js/moment.min.js"></script>
 		<script src="assets/js/daterangepicker.js"></script>

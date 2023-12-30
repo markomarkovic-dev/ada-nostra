@@ -4,14 +4,20 @@ $notSentClass = '';
 $message = '';
 
 if (isset($_POST['submit'])) {
+    $dateFrom = $_POST['date-from'];
+    $dateTo = $_POST['date-to'];
+    $guests = $_POST['guest-count'];
     $name = $_POST['name-surname'];
-    $email = $_POST['email'];
+    $checkIn = $_POST['expected-checkin'];
     $phone = $_POST['tel'];
-    $expectedCheckin = $_POST['expected-checkin'];
+    $email = $_POST['email'];
+    $notes = $_POST['additional-notes'];
     $honeypot = $_POST['honeypot'];
 
+    var_dump($_POST);
+
     // Validate input and check honeypot
-    if (empty($name) || empty($email) || empty($expectedCheckin) || empty($phone) || !empty($honeypot)) {
+    if (empty($dateFrom) || empty($dateTo) || empty($guests) || empty($name) || empty($checkIn) || empty($phone) || empty($email) || empty($notes) || !empty($honeypot)) {
         $message = $lang['global']['field-check'];
         $notSentClass = 'not-send';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -19,18 +25,19 @@ if (isset($_POST['submit'])) {
     } else {
         // Send the email
         $to = 'markomarko988@gmail.com'; // Replace with your email address
-        $subject = 'Kontakt forma';
-        $body = "Ime i prezime: $name\nOrganizacija: $expected-checkin\nEmail: $email\nBroj telefona: $phone";
+        $subject = 'Nova rezervacija';
+        $body = "Dolazak: $dateFrom\nOdlazak: $dateTo\nBroj gostiju: $guests\nIme i prezime: $name\nOčekivano vrijeme dolaska: $checkIn\nBroj telefona: $phone\nEmail: $email\nDodatne napomene: $notes";
         $body = iconv(mb_detect_encoding($body, mb_detect_order(), true), "UTF-8", $body);
         $headers = "Od: $email\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
         if (mail($to, $subject, $body, $headers)) {
-            echo $messageMailer;
+            header('Location: apartman-1.php');
+            exit();
         } else {
-            $message = $lang['global']['message-fail'];
-            $notSentClass = 'not-send';
-            $modalPrikaz = 'show';
+            $modalPrikaz = 'show';            
+            header('Location: apartman-1.php');
+            exit();
         }
     }
 }
@@ -47,22 +54,22 @@ if (isset($_POST['submit'])) {
                     <div class="input-wrapper input-wrapper-icon">
                         <i class="fa-solid fa-calendar-week"></i>
                         <label for="date-from">Dolazak</label>
-                        <input type="text" name="dates" id="date-from">
+                        <input type="text" name="date-from" id="date-from">
                     </div>
                     <div class="input-wrapper input-wrapper-icon">
                         <i class="fa-solid fa-calendar-week"></i>
                         <label for="date-to">Odlazak</label>
-                        <input type="text" name="dates" id="date-to">
+                        <input type="text" name="date-to" id="date-to">
                     </div>
                     <div class="input-wrapper input-wrapper-icon">
                         <i class="fa-solid fa-user-group"></i>
                         <label for="guest-count">Gosti</label>
-                        <input type="number" id="guest-count" min="1" value="1">
+                        <input type="number" id="guest-count" name="guest-count" min="1" value="1">
                     </div>
                     <div class="form-field">
                         <div class="form-group form-element">
-                            <label for="name"><?= $lang['global']['name-surname'] ?></label>
-                            <input id="name" type="text" name="name-surname" class="form-control" required="required" data-error="<?= $lang['global']['field-required'] ?>" autocomplete="on">
+                            <label for="name-surname"><?= $lang['global']['name-surname'] ?></label>
+                            <input id="name-surname" type="text" name="name-surname" class="form-control" required="required" data-error="<?= $lang['global']['field-required'] ?>" autocomplete="on">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -76,7 +83,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-field">
                         <div class="form-group form-element">
                             <label for="email"><?= $lang['global']['email'] ?></label>
-                            <input id="email" type="text" name="email" class="form-control" required="required" data-error="<?= $lang['global']['email-error'] ?>" autocomplete="on">
+                            <input id="email" type="email" name="email" class="form-control" required="required" data-error="<?= $lang['global']['email-error'] ?>" autocomplete="on">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -106,13 +113,11 @@ if (isset($_POST['submit'])) {
                 <div class="form-field">
                     <div class="form-field-actions">
                         <div class="form-element">
-                            <!-- <input type="hidden" name="recaptcha_response" value="" id="recaptchaResponse"> -->
                             <div class="contact-buttons-wrapper">
                                 <button class="btn btn-secondary modal-close"><?= $lang['global']['cancel'] ?></button>
                             </div>
                         </div>
                         <div class="form-element submit-form">
-                            <!-- <input type="hidden" name="recaptcha_response" value="" id="recaptchaResponse"> -->
                             <div class="contact-buttons-wrapper">
                                 <input type="submit" id="send-button" name="submit" value="<?= $lang['global']['submit-reservation'] ?>" class="btn btn-primary">
                             </div>
