@@ -1,4 +1,12 @@
 <?php
+// Check if the server is localhost (127.0.0.1) or an IP associated with localhost
+if ($_SERVER['SERVER_ADDR'] == '127.0.0.1' || $_SERVER['SERVER_ADDR'] == '::1') {
+    // Enable error reporting
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
+
 //global site name		
 $siteName = "Ada Nostra";
 $mainlang = 'sr';

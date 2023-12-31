@@ -1,7 +1,33 @@
 <?php
+// Set maximum POST size to 20MB
+ini_set('post_max_size', '20M');
+// Set maximum execution time to 300 seconds (5 minutes)
+ini_set('max_execution_time', 900);
+
 $modalPrikaz = '';
 $notSentClass = '';
 $message = '';
+$emailBody = <<<HTML
+<!DOCTYPE html>
+<html lang="en" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+ <head>
+    <meta charset="UTF-8">
+    <title>Reservation Confirmation</title>
+ </head>
+<body style="background-color:#7E8299;">
+  <table style="max-width: 600px;background-color:white;margin:auto;padding: 25px;">
+    <tr style="border: 4px solid #000000; padding: 32px 16px;">
+      <td>
+        <img src="https://develop.adanostra.com/assets/email/logo.png" style="display: block; margin: 0 auto 41px auto;" alt="">
+        <p style="text-align: center;font-size: 16px;"><b>Zdravo, Marko Marković</b></p>
+      <p style="text-align: center;font-size: 14px;margin-bottom: 25px;">Srdačno Vam zahvaljujemo na izboru Ada Nostra Apartmana za vaš predstojeći boravak. Vaša rezervacija je uspešno zaprimljena, i radujemo se što ćemo vam pružiti nezaboravan doživljaj. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi repellat labore sequi necessitatibus beatae cumque blanditiis quia minima unde? Provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa quasi architecto sequi totam ut corporis aliquam. Quo nam fuga, temporibus nihil saepe consectetur assumenda facilis neque? Tenetur rem harum perferendis iusto saepe tempore a dicta aperiam eveniet doloremque et ipsum nostrum in, vitae quidem, minima similique veniam blanditiis necessitatibus.
+      </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+HTML;
 
 if (isset($_POST['submit'])) {
     $dateFrom = $_POST['date-from'];
@@ -13,8 +39,6 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $notes = $_POST['additional-notes'];
     $honeypot = $_POST['honeypot'];
-
-    var_dump($_POST);
 
     // Validate input and check honeypot
     if (empty($dateFrom) || empty($dateTo) || empty($guests) || empty($name) || empty($checkIn) || empty($phone) || empty($email) || empty($notes) || !empty($honeypot)) {
@@ -32,11 +56,26 @@ if (isset($_POST['submit'])) {
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
         if (mail($to, $subject, $body, $headers)) {
-            header('Location: apartman-1.php');
+
+            // Configure headers for the user confirmation email
+            $toGuest = $email;
+            $headersGuest = "From: rezervacije@adanostra.com\r\n";
+            $headersGuest .= "Content-Type: text/html; charset=UTF-8\n";
+            $emailBody = iconv(mb_detect_encoding($emailBody, mb_detect_order(), true), "UTF-8", $emailBody);
+            $subjectGuest = 'Hvala na rezervaciji! - Ada Nostra';
+
+            // Send the user confirmation email
+            mail($toGuest, $subjectGuest, $emailBody, $headersGuest);
+
+            // Redirect to the success page after both emails are sent
+            $modalPrikaz = 'show';
+            $message = "poslano je";
+            // header('Location: apartman-1.php');
             exit();
         } else {
-            $modalPrikaz = 'show';            
-            header('Location: apartman-1.php');
+            $modalPrikaz = 'show';          
+            $message = "nije poslano";  
+            // header('Location: apartman-1.php');
             exit();
         }
     }

@@ -7,17 +7,17 @@
     </a>
     <div class="header-container">
         <div class="header-left">
-            <?php 
-                require 'components/contact-data.php';
-            ?>
+<?php 
+    require 'components/contact-data.php';
+?>
         </div>
         <div class="header-right">
-            <div class="data-block">
-                <a href="home"><i class="fa-solid fa-house"></i>Početna</a>
-            </div>
-            <?php 
-                require 'components/booking-social.php';
-            ?>
+<div class="data-block">
+    <a href="home"><i class="fa-solid fa-house"></i>Početna</a>
+</div>
+<?php 
+    require 'components/booking-social.php';
+?>
             <div class="lang-select">
                 <a href="<?= switchLang('/' . $language . '/', '/sr/')?>" class=" <?= $language === 'sr' ? 'active' : '' ?>">SR</a>
                 <span>/</span>
