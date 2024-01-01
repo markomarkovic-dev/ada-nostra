@@ -11,7 +11,7 @@ if ($_SERVER['SERVER_ADDR'] == '127.0.0.1' || $_SERVER['SERVER_ADDR'] == '::1') 
 $siteName = "Ada Nostra";
 $mainlang = 'sr';
 
-$siteUrl = "https://adanostra.com";
+$siteUrl = "https://develop.adanostra.com";
 include 'apartment-data.php';
 
 //posjeceni url

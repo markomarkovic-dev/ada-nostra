@@ -669,6 +669,12 @@ main {
   gap: 1.5rem;
 }
 
+.thank-you {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -1210,6 +1216,11 @@ input:focus, textarea:focus {
   position: relative;
   background-color: white;
   padding: 4.8rem 10.4rem;
+}
+@media (max-width: 991px) {
+  .modal-content {
+    padding: 4.8rem 1.6rem;
+  }
 }
 .modal-content-header {
   display: flex;

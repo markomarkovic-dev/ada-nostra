@@ -1,33 +1,14 @@
 <?php
-// Set maximum POST size to 20MB
-ini_set('post_max_size', '20M');
-// Set maximum execution time to 300 seconds (5 minutes)
-ini_set('max_execution_time', 900);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'includes/PHPMailer/src/PHPMailer.php';
+require 'includes/PHPMailer/src/Exception.php';
+require 'includes/PHPMailer/src/SMTP.php';
 
 $modalPrikaz = '';
 $notSentClass = '';
 $message = '';
-$emailBody = <<<HTML
-<!DOCTYPE html>
-<html lang="en" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
- <head>
-    <meta charset="UTF-8">
-    <title>Reservation Confirmation</title>
- </head>
-<body style="background-color:#7E8299;">
-  <table style="max-width: 600px;background-color:white;margin:auto;padding: 25px;">
-    <tr style="border: 4px solid #000000; padding: 32px 16px;">
-      <td>
-        <img src="https://develop.adanostra.com/assets/email/logo.png" style="display: block; margin: 0 auto 41px auto;" alt="">
-        <p style="text-align: center;font-size: 16px;"><b>Zdravo, Marko Marković</b></p>
-      <p style="text-align: center;font-size: 14px;margin-bottom: 25px;">Srdačno Vam zahvaljujemo na izboru Ada Nostra Apartmana za vaš predstojeći boravak. Vaša rezervacija je uspešno zaprimljena, i radujemo se što ćemo vam pružiti nezaboravan doživljaj. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi repellat labore sequi necessitatibus beatae cumque blanditiis quia minima unde? Provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa quasi architecto sequi totam ut corporis aliquam. Quo nam fuga, temporibus nihil saepe consectetur assumenda facilis neque? Tenetur rem harum perferendis iusto saepe tempore a dicta aperiam eveniet doloremque et ipsum nostrum in, vitae quidem, minima similique veniam blanditiis necessitatibus.
-      </p>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-HTML;
 
 if (isset($_POST['submit'])) {
     $dateFrom = $_POST['date-from'];
@@ -40,44 +21,73 @@ if (isset($_POST['submit'])) {
     $notes = $_POST['additional-notes'];
     $honeypot = $_POST['honeypot'];
 
-    // Validate input and check honeypot
-    if (empty($dateFrom) || empty($dateTo) || empty($guests) || empty($name) || empty($checkIn) || empty($phone) || empty($email) || empty($notes) || !empty($honeypot)) {
-        $message = $lang['global']['field-check'];
-        $notSentClass = 'not-send';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $message = $lang['global']['email-error'];
-    } else {
-        // Send the email
-        $to = 'markomarko988@gmail.com'; // Replace with your email address
-        $subject = 'Nova rezervacija';
-        $body = "Dolazak: $dateFrom\nOdlazak: $dateTo\nBroj gostiju: $guests\nIme i prezime: $name\nOčekivano vrijeme dolaska: $checkIn\nBroj telefona: $phone\nEmail: $email\nDodatne napomene: $notes";
-        $body = iconv(mb_detect_encoding($body, mb_detect_order(), true), "UTF-8", $body);
-        $headers = "Od: $email\r\n";
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    // Create a PHPMailer instance for the first email (to the site owner)
+    $mail = new PHPMailer(true);
 
-        if (mail($to, $subject, $body, $headers)) {
+    // Set CharSet and Encoding
+    $mail->CharSet = 'UTF-8';
+    $mail->Encoding = 'base64';
 
-            // Configure headers for the user confirmation email
-            $toGuest = $email;
-            $headersGuest = "From: rezervacije@adanostra.com\r\n";
-            $headersGuest .= "Content-Type: text/html; charset=UTF-8\n";
-            $emailBody = iconv(mb_detect_encoding($emailBody, mb_detect_order(), true), "UTF-8", $emailBody);
-            $subjectGuest = 'Hvala na rezervaciji! - Ada Nostra';
+    try {
+        // SMTP configuration for the owner's email
+        $mail->isSMTP();
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also supported
+        $mail->Port       = 587; // SMTP port; use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->SMTPDebug = false;
+        $mail->Host       = 'smtp.hostinger.com'; // Replace with your SMTP serve
+        $mail->SMTPAuth   = true;
+        require 'smtp-credentials.php';
+        // Email content for the site owner
+        $mail->setFrom('rezervacije@adanostra.com', 'Ada Nostra');
+        $mail->addReplyTo('rezervacije@adanostra.com', 'Ada Nostra');
+        $mail->addAddress('rezervacije@adanostra.com', 'Ada Nostra'); // Replace with owner's email
+        $mail->isHTML(true);
+        $mail->Subject = 'Nova rezervacija';
+        $mail->Body = "Dolazak: $dateFrom<br>
+            Odlazak: $dateTo<br>
+            Broj gostiju: $guests<br>
+            Ime i prezime: $name<br>
+            Očekivano vrijeme dolaska: $checkIn<br>
+            Broj telefona: $phone<br>
+            Email: $email<br>
+            Dodatne napomene: $notes";
+        // Send email to the site owner
+        $mail->send();
+        
+        // Email to visitor
+        $mail->clearAddresses();
+        $mail->addAddress($email, $name); // Visitor's email
+        $mail->Subject = 'Hvala na rezervaciji! - Ada Nostra';
+        // Set the path to your HTML email template file
+        $templateFilePath = 'assets/email/reservation.html';
+        // Read the contents of the HTML file
+        $emailTemplate = file_get_contents($templateFilePath);
+        // Set the email body using the content of the HTML file
+        // Replace placeholders with actual values
+        $emailTemplate = str_replace(
+            ['%NAME%', '%DOMAIN%'],
+            [$name, $siteUrl],
+            $emailTemplate
+        );
 
-            // Send the user confirmation email
-            mail($toGuest, $subjectGuest, $emailBody, $headersGuest);
+        // Set the email body using the modified template
+        $mail->Body = $emailTemplate;
+        
+        // Send email to visitor
+        $mail->send();
 
-            // Redirect to the success page after both emails are sent
-            $modalPrikaz = 'show';
-            $message = "poslano je";
-            // header('Location: apartman-1.php');
-            exit();
-        } else {
-            $modalPrikaz = 'show';          
-            $message = "nije poslano";  
-            // header('Location: apartman-1.php');
-            exit();
-        }
+        $redirectOn = "<script>
+                        window.location.href = 'thank-you.php?name=$name';
+                    </script>";
+        echo $redirectOn;
+        exit(); // Stop further execution after redirection
+
+    } catch (Exception $e) {
+        $modalPrikaz = 'show';
+        $message = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // Handle exceptions or errors as needed
+        header('Location: https://develop.adanostra.com/sr/apartman-1.php', true);
+        exit(); // Stop further execution after redirection
     }
 }
 ?>
@@ -85,7 +95,7 @@ if (isset($_POST['submit'])) {
     <div class="modal-content">
         <i class="fa-solid fa-xmark modal-close"></i>
         <div class="modal-content-body">
-            <form method="post" action="" class="contact-form" id="reservation">
+            <form method="post" class="contact-form" id="reservation" data-ajax="false">
                 <h4 class="modal-heading-msg"><?= $lang['global']['form-heading-msg'] ?></h4>
                 
                 <h2>Detalji rezervacije</h2>
