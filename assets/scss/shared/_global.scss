@@ -234,6 +234,10 @@ main {
     margin-right: auto;
     margin-bottom: 7.1rem;
 
+    strong {
+        font-size: inherit;
+    }
+
             
     @media(max-width: 991px) {
         font-size: 1.6rem;
@@ -314,6 +318,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: $c-black;
 
     .feature-image,
     .apartment-drawer {
@@ -329,7 +334,7 @@ main {
         filter: grayscale(100%);
     }
 
-    .apartment-link {
+    .apartment-eye {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -370,11 +375,13 @@ main {
     }
 
     &:hover {
+        color: $c-black;
+
         .feature-image, .gallery-item {
             filter: grayscale(0);
         }
 
-        .apartment-link {
+        .apartment-eye {
             @media(min-width: 992px) {
                 display: flex;
             }
@@ -393,7 +400,7 @@ main {
             filter: grayscale(0);
         }
 
-        .apartment-link {
+        .apartment-eye {
             @media(min-width: 992px) {
                 display: flex;
             }
@@ -668,8 +675,12 @@ main {
     }
   }
 
-  .thank-you {
+  .thank-you, .simple-page {
     display: flex;
-    align-items: center;
     min-height: 100vh;
+    padding-top: 15rem;
+
+    .section-desc {
+        margin-bottom: 3.1rem;
+    }
   }

@@ -26,7 +26,7 @@ include 'components/apartment-drawer.php';
         <div class="section-container">
             <span class="sup-heading">Naša priča</span>
             <h2 class="section-heading">Ada Nostra <span>apartmani</span></h2>
-            <p class="section-desc">Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan doživljaj uzvišenosti. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
+            <p class="section-desc">Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan spoj komfora i pristupačnosti sa dobro pozicioniranom lokacijom koja je odlična polazna tačka za sva druga mjesta u našem gradu. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
             <p class="section-desc">Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost. Nudimo vam prostor gdje se luksuz susreće s prirodom.</p>
             <div class="features-container">
                 <div class="features-item">
@@ -80,9 +80,9 @@ include 'components/apartment-drawer.php';
             </div>
         </div>
     </section>
-    <section class="view360">
+    <!-- <section class="view360">
         <button class="btn btn-primary">360° virtuelni obilazak</button>
-    </section>
+    </section> -->
     <section>
         <div class="section-container section-padding">
             <div class="apartments-grid apartments-grid-3 gallery-modal">
@@ -115,7 +115,7 @@ include 'components/apartment-drawer.php';
             </div>
             <div class="section-text">
                 <p>Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj.</p>
-                <a href="tel:+387 65 111 222" class="big-info-centered">+387 65 111 222</a>
+                <a href="tel:+38765300216" class="big-info-centered">+387 65 300 216</a>
                 <a href="mailto:rezervacije@adanostra.com" class="big-info-centered">rezervacije@adanostra.com</a>
             </div>
         </div>
@@ -129,14 +129,7 @@ include 'components/apartment-drawer.php';
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script>
-    $('input[name="dates"]').daterangepicker({
-        <?php
-        include 'components/datepicker-settings.php';
-        ?>
-    });
-
-    $('#q-date-from, #q-date-to').daterangepicker({
-        "drops": "up",
+    $('input[name="dates"], input[name="date-from"], input[name="date-to"]').daterangepicke({
         <?php
         include 'components/datepicker-settings.php';
         ?>

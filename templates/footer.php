@@ -1,5 +1,5 @@
 <footer class="footer">
-    <a href="#">
+    <a href="home">
         <img src="assets/images/logo.svg" alt="" class="logo">
     </a>
     <div class="footer-wrapper">
@@ -12,7 +12,7 @@
             </div>
             <div class="footer-container-right">
             <div class="data-block">
-                <a href="mailto:rezervacije@adanostra.com">Politika privatnosti</a>
+                <a href="politika-privatnosti">Politika privatnosti</a>
             </div>
             <div class="data-block">
                 <a href="bonton-apartmana">Bonton apartmana</a>

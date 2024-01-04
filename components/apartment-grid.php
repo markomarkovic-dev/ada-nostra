@@ -9,14 +9,14 @@
                 echo '<div class="apartment-block apartment-block-yellow"></div>';
             }
             echo '
-                <div class="apartment-block">
+                <a href="apartman-' . $apartmentId . '" class="apartment-block">
                     <img src="assets/images/apartment-' . $apartmentId . '/' . $apartment["images"]["feature-image"] . '" class="feature-image" alt=""/>
-                    <a href="apartman-' . $apartmentId . '" class="apartment-link"><img src="assets/icons/eye.svg" alt=""/><span>Vidi više</span></a>';
+                    <div class="apartment-eye"><img src="assets/icons/eye.svg"><span>Vidi više</span></div>';
                     
                 apartmentDrawer($apartmentId);
             
             echo '
-                </div>
+                </a>
             ';
         }
     ?>

@@ -76,17 +76,12 @@ if (isset($_POST['submit'])) {
         // Send email to visitor
         $mail->send();
 
-        $redirectOn = "<script>
-                        window.location.href = 'thank-you.php?name=$name';
-                    </script>";
-        echo $redirectOn;
+        echo "<script>window.location.href = 'thank-you.php?name=$name';</script>";
         exit(); // Stop further execution after redirection
 
     } catch (Exception $e) {
         $modalPrikaz = 'show';
-        $message = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        // Handle exceptions or errors as needed
-        header('Location: https://develop.adanostra.com/sr/apartman-1.php', true);
+        $message = "Poruka nije poslana!";
         exit(); // Stop further execution after redirection
     }
 }
@@ -146,7 +141,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-field">
                         <div class="form-group form-element">
                             <label for="additional-notes"><?= $lang['global']['additional-notes'] ?></label>
-                            <textarea id="additional-notes" name="additional-notes" class="form-control" required="required" rows="5" data-error="<?= $lang['global']['field-required'] ?>"></textarea>
+                            <textarea id="additional-notes" name="additional-notes" class="form-control" rows="5"></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>

@@ -280,6 +280,9 @@ main {
   margin-right: auto;
   margin-bottom: 7.1rem;
 }
+.section-desc strong {
+  font-size: inherit;
+}
 @media (max-width: 991px) {
   .section-desc {
     font-size: 1.6rem;
@@ -355,6 +358,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #231F20;
 }
 .apartment-block .feature-image,
 .apartment-block .apartment-drawer {
@@ -370,7 +374,7 @@ main {
   height: 100%;
   filter: grayscale(100%);
 }
-.apartment-block .apartment-link {
+.apartment-block .apartment-eye {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -379,12 +383,12 @@ main {
   z-index: 2;
   animation: showSlow 0.2s ease-out forwards;
 }
-.apartment-block .apartment-link span {
+.apartment-block .apartment-eye span {
   font-size: 1.8rem;
   color: rgba(0, 79, 172, 0.5);
 }
 @media (min-width: 992px) {
-  .apartment-block .apartment-link {
+  .apartment-block .apartment-eye {
     display: none;
   }
 }
@@ -404,11 +408,14 @@ main {
     transform: translateY(100%);
   }
 }
+.apartment-block:hover {
+  color: #231F20;
+}
 .apartment-block:hover .feature-image, .apartment-block:hover .gallery-item {
   filter: grayscale(0);
 }
 @media (min-width: 992px) {
-  .apartment-block:hover .apartment-link {
+  .apartment-block:hover .apartment-eye {
     display: flex;
   }
 }
@@ -423,7 +430,7 @@ main {
   filter: grayscale(0);
 }
 @media (min-width: 992px) {
-  .gallery-item:hover .apartment-link {
+  .gallery-item:hover .apartment-eye {
     display: flex;
   }
 }
@@ -669,10 +676,13 @@ main {
   gap: 1.5rem;
 }
 
-.thank-you {
+.thank-you, .simple-page {
   display: flex;
-  align-items: center;
   min-height: 100vh;
+  padding-top: 15rem;
+}
+.thank-you .section-desc, .simple-page .section-desc {
+  margin-bottom: 3.1rem;
 }
 
 .header {
@@ -815,6 +825,10 @@ main {
   }
 }
 
+.footer {
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .footer > a {
   display: block;
   transform: translateY(50%);
@@ -1080,6 +1094,7 @@ input:focus, textarea:focus {
   bottom: 1.3rem;
   left: 1.7rem;
   pointer-events: none;
+  color: #5E6278;
 }
 .input-wrapper-split {
   display: flex;
@@ -1136,7 +1151,7 @@ input:focus, textarea:focus {
   font-weight: 300;
 }
 
-.form-tip {
+.form-tip, .italic-text {
   font-size: 1.6rem;
   text-align: center;
   display: block;
@@ -1144,6 +1159,18 @@ input:focus, textarea:focus {
   font-style: italic;
   line-height: 1.6;
   color: #414042;
+}
+
+.italic-text {
+  max-width: 99.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.4rem;
+}
+@media (max-width: 991px) {
+  .italic-text {
+    font-size: 1.6rem;
+  }
 }
 
 .btn {

@@ -125,8 +125,8 @@
             <span class="sup-heading">O nama</span>
                 <h2 class="section-heading">Ada nostra <span>apartmani</span></h2>
                 <div class="section-text">
-                <p>Mi smo Ada Nostra - vaša destinacija za nezaboravan boravak na samo 10 minuta od centra Banja Luke. Smješteni uz obalu Vrbasa, naši apartmani pružaju savršen spoj udobnosti, elegancije i nezaboravnog pogleda.</p>
-                <p>Ada Nostra Apartmani sa zadovoljstvom primaju organizovane grupe od 50+ gostiju. Bez obzira da li organizujete porodično okupljanje, timsku izlet, ili bilo koju drugu manifestaciju, naš tim je spreman da osigura udoban boravak za svakog gosta. Za dodatnu praktičnost, rezervisali smo i posebno parking mjesto za autobus kako biste bezbrižno stigli na odredište.</p>
+                <p>Mi smo Ada Nostra - vaša destinacija za nezaboravan boravak na samo 10 minuta od centra Banja Luke. Smješteni uz obalu Vrbasa, naši apartmani pružaju savršen spoj udobnosti, elegancije i kvalitete usluge.</p>
+                <p>Ada Nostra Apartmani sa zadovoljstvom primaju organizovane grupe od 50+ gostiju. Bez obzira da li organizujete porodično okupljanje, timski izlet, ili bilo koju drugu manifestaciju, naš tim je spreman da osigura udoban boravak za svakog gosta. Za dodatnu praktičnost, rezervisali smo i posebno parking mjesto za autobus kako biste bezbrižno stigli na odredište.</p>
             </div>
         </div>
         <div class="section-container restaurant-block">
@@ -138,7 +138,7 @@
                 </div>
                 <div class="section-container-column">
                     <div class="section-text location-desc">
-                        <p>Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan doživljaj uzvišenosti. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
+                        <p>Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan spoj komfora i pristupačnosti sa dobro pozicioniranom lokacijom koja je odlična polazna tačka za sva druga mjesta u našem gradu. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
                         <p>Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost. Nudimo vam prostor gdje se luksuz susreće s prirodom.</p>
                     </div>
                     <img src="assets/icons/calendar-big.svg" alt="" class="sup-icon">
@@ -146,7 +146,7 @@
                     <h2 class="section-heading">Restoran <span>Stara Ada</span></h2>
                     <div class="section-text">
                         <p>Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj. </p>
-                        <a href="tel:+387 65 111 222" class="big-info-centered">+387 65 111 222</a>
+                        <a href="tel:+38765300216" class="big-info-centered">+387 65 300 216</a>
                         <a href="mailto:rezervacije@adanostra.com" class="big-info-centered">rezervacije@adanostra.com</a>
                     </div>
                 </div>

@@ -67,8 +67,19 @@
 			'title' => 'Apartman 1', 
 		  'description' => 'Prvi apartman', 
 		  //content
-
 	  ),
+
+	  'thank-you' => array(
+		'title' => 'Hvala vam!', 
+	  'description' => 'Srdačno hvala na poverenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima.', 
+	  //content
+  ),
+
+	  'bonton-apartmana' => array(
+		'title' => 'Bonton apartmana', 
+	  'description' => 'Dobrodošli u naše luksuzne apartmane! Kako bismo osigurali ugodno iskustvo za sve naše goste, molimo vas da se pridržavate sljedećih pravila ponašanja i kućnog reda', 
+	  //content
+  ),
 );
 
 ?>
