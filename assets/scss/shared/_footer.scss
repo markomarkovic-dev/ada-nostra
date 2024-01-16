@@ -43,13 +43,18 @@
         }
     }
 
-    a, i {
+    a {
         color: white;
+    }
+
+    img {
+        filter: brightness(0) invert(1);
     }
 
     h3 {
         font-size: 3rem;
         font-weight: 400;
+        text-transform: uppercase;
 
         @media(max-width: 991px) {
             display: none;
@@ -68,7 +73,7 @@
 
     .data-block-icons {
         img {
-            filter: brightness(0) invert(1);
+            height: 2.4rem;
         }
     }
 

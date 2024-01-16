@@ -13,7 +13,7 @@
         </div>
         <div class="header-right">
 <div class="data-block">
-    <a href="home"><i class="fa-solid fa-house"></i>Početna</a>
+    <a href="home"><img src="assets/icons/home.svg" alt="">Početna</a>
 </div>
 <?php 
     require 'components/booking-social.php';

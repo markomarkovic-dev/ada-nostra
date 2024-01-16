@@ -1,6 +1,7 @@
 <?php
 	$lang = array(
 		'global' => array(
+			"currency" => "€",
 			'nav-home' => 'Početna',
 			'nav-projects' => 'Projekti',
 			'nav-news' => 'Vijesti',
@@ -18,6 +19,17 @@
             'terms_of_service' => 'Uslovima korištenja',
 			'interested' => 'Zanima vas kultura?',
 			'check-projects' => 'Pogledajte naše projekte',
+
+			'56' => 'Silver Apartment',
+			'57' => 'Yellow Apartment',
+			'58' => 'Pink Apartment',
+			'59' => 'Golden Apartment',
+			'60' => 'Green Apartment',
+			'61' => 'Gray Apartment',
+			'63' => 'Olive Apartment',
+			'64' => 'Orange Apartment',
+			'65' => 'Brown Apartment',
+			'66' => 'Burgundy Apartment',
 
             'cookie1' => 'Prilikom posjete našoj web stranici koristimo kolačiće koji omogućavaju identifikaciju korisnika. Kolačići su male datoteke koje se privremeno pohranjuju i ne sadrže lične podatke, tako da je vaša privatnost zaštićena. Nastavkom pretraživanja stranice, saglasni ste sa ovom upotrebom i prihvatate Politiku privatnosti za našu web stranicu, kojom pristajete na obradu ličnih podataka u skladu sa ovom Politikom, koja je dostupna na sljedećem linku:',
 			'cookie2' => 'Politika privatnosti',

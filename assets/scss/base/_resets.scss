@@ -10,7 +10,7 @@
     overflow-x: clip;
   }
   
-  p, a, li, button, input, textarea, span, strong, label, select {
+  p, a, li, button, input, textarea, span, strong, label, select, option {
     font-size: 1.6rem;
   }
   
@@ -41,4 +41,8 @@
   .img-fluid {
     width: 100%;
     height: auto;
+  }
+
+  .hidden {
+    display: none;
   }

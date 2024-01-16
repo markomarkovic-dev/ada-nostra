@@ -59,26 +59,23 @@
         position: fixed;
         top: 0;
         z-index: -1;
-        padding: 1.9rem 3.5rem;
+        padding: 1.9rem 11.5rem;
         display: flex;
         justify-content: center;
         width: 19rem;
         transition: all .3s ease-in-out;
         background-color: white;
 
-        @media(max-width: 1500px) {
+        @media(min-width: 1201px) and (max-width: 1500px) {
             padding: 1.3rem 3.5rem;
         }
         
-        @media(max-width: 1500px) {
+        @media(min-width: 1201px) and (max-width: 1500px) {
             transform: translateY(5.6rem);
         }
 
-        @media(max-width: 1200px) {
-            left: 0;
-            top: 2rem;
-            transform: unset;
-            padding: 0;
+        @media(max-width: 768px) {
+            padding: 1.9rem 1.5rem;
         }
     }
 
@@ -90,12 +87,16 @@
     
         .logo-icon,
         .logo-text {
-            width: 12rem;
+            width: 15.5rem;
             transition: all .3s ease-in-out;
+
+            @media(max-width: 768px) {
+                width: 11.5rem;
+            }
         }
 
         .logo-icon {
-            @media(max-width: 1500px) {
+            @media(min-width: 1201px) and (max-width: 1500px) {
                 display: none;
             }
         }
@@ -110,17 +111,31 @@
                 @media(min-width: 1501px) {
                     transform: translateY(-40%);
                 }
+
+                @media(max-width: 1200px) {
+                    transform: translateY(-40%);
+                }
             }
         }
 
         .logo-fixed {
             @media(min-width: 1501px) {
-                transform: translateY(-65%);
-                padding: 0rem 4rem;
+                transform: translateY(-71%);
+                padding: 0rem 11.5rem;
+            }
+
+            @media(max-width: 1200px) {
+                transform: translateY(-71%);
+                padding: 0rem 11.5rem;
             }
 
             @media(min-width: 1201px) and (max-width: 1501px){
                 box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.20);
+            }
+
+            @media(max-width: 1200px) {
+                transform: translateY(-61%);
+                padding: 1.9rem 1.5rem;
             }
         }
     }
@@ -131,6 +146,15 @@
     align-items: center;
     gap: .4rem;
 
+    a {
+        color: rgba($c-gray, .3);
+
+        &.active,
+        &:hover {
+            color: $c-gray;
+        }
+    }
+
     span {
         opacity: .2;
     }
@@ -140,6 +164,7 @@
     max-height: 2rem;
     position: fixed;
     right: 2.5rem;
+    top: 2.1rem;
     z-index: 21;
 
     @media(min-width: 1201px) {

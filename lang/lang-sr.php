@@ -1,6 +1,7 @@
 <?php
 	$lang = array(
 		'global' => array(
+			"currency" => "KM",
 			'nav-home' => 'Početna',
 			'nav-projects' => 'Projekti',
 			'nav-news' => 'Vijesti',
@@ -19,14 +20,22 @@
 			'interested' => 'Zanima vas kultura?',
 			'check-projects' => 'Pogledajte naše projekte',
 
-            'cookie1' => 'Prilikom posjete našoj web stranici koristimo kolačiće koji omogućavaju identifikaciju korisnika. Kolačići su male datoteke koje se privremeno pohranjuju i ne sadrže lične podatke, tako da je vaša privatnost zaštićena. Nastavkom pretraživanja stranice, saglasni ste sa ovom upotrebom i prihvatate Politiku privatnosti za našu web stranicu, kojom pristajete na obradu ličnih podataka u skladu sa ovom Politikom, koja je dostupna na sljedećem linku:',
-			'cookie2' => 'Politika privatnosti',
-			'cookie3' => 'Prihvati',
-			'cookie4' => 'Odbij',
-			'heading' => 'Mi smo <strong>ljudi</strong> koji čine mnogo <strong>za kulturu!</strong>',
+			'56' => 'Srebreni Apartman',
+			'57' => 'Žuti Apartman',
+			'58' => 'Rozi Apartman',
+			'59' => 'Zlatni Apartman',
+			'60' => 'Zeleni Apartman',
+			'61' => 'Sivi Apartman',
+			'63' => 'Maslinasti Apartman',
+			'64' => 'Narandzasti Apartman',
+			'65' => 'Braon Apartman',
+			'66' => 'Bordo Apartman',
 
 			'form-heading-msg' => 'Radujemo se što ste odabrali datum Vašeg dolaska.
 			Molimo vas da ispod unesete detalje rezervacije.',
+			'arrival' => 'Dolazak:',
+			'departure' => 'Odlazak:',
+			'guests' => 'Gosti:',
 			'name-surname' => 'Ime i prezime:',
 			'email' => 'Email:',
 			'phone' => 'Broj telefona:',
@@ -41,29 +50,50 @@
 			'field-required' => 'Polje je obavezno',
 			'email-error' => 'Email nije validan',
 			'form-tip' => 'Hvala vam što ste izabrali nas za Vaš poseban trenutak. Nakon što popunite formu, kontaktiraćemo Vas kako bismo potvrdili vašu rezervaciju i osigurali da Vaše iskustvo bude nezaboravno. Uživajte u svakom trenutku!',
-
+			'thank-you-reservation' => 'Hvala na rezervaciji! - Ada Nostra',
+			'reservation-details' => 'Detalji rezervacije',
 			'field-check' => "Provjerite sva polja",
+			'view-more' => 'Vidi više',
+			'our-story' => 'Naša priča',
+
+			'feature-location' => '10min od<br> centra grada',
+			'feature-parking' => 'Rezervisan<br> parking',
+			'feature-entrance' => 'Poseban ulaz<br> za goste',
+			'feature-wifi' => 'Besplatan<br> WIFI',
+			'feature-tv' => 'Kablovska<br> televizija',
+			'feature-ac' => 'Klimatizovane<br> prostorije',
+			'feature-conference' => 'Konferencijska<br> sala',
+			'feature-pets' => 'Pet<br> friendly',
+
+			'contact-us-text' => 'Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj.'
 		),
 
 		'home' => array(
 		  	'title' => 'Apartmani', 
 			'description' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima,
-			profesionalna usluga i najbolje opremljeni apartmani.', 
-			//content
-			'subheading' => 'Posjetite nas',
-			'involved' => 'Želite li se uključiti?',
-			'call-us' => 'Napravite potez, pozovite nas',
-			'support-us' => 'Želite nas podržati?',
-			'participated' => 'Umjetnici koji su učestvovali?',
-			'participants' => 'Pogledaj ih',
-			'latest-news' => 'Najnovije vijesti',
-			'more-news' => 'Pogledajte sve vijesti',
-			'others-say' => 'Šta kažu o nama',
-			'supporters' => 'Ko nas je podržao',
-			'mladen' => 'It was such a pleasure to be involved with the CVU. The project was amazing, and the organization was top notch. I loved getting to hear so many wonderful minds, and work with CVU crew. Congratulations to all involved for producing such a tremendous event.'
+			profesionalna usluga i najbolje opremljeni apartmani.',
+			'ada-apartments-heading' => 'Ada Nostra <span>apartmani</span>',
+			'ada-apartments-desc' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima, profesionalna usluga i najbolje opremljeni apartmani.',
+
+			'our-pleasure' => 'Naš užitak',
+			'ada-restaurant-heading' => 'Restoran <span>Stara Ada</span>',
+			'ada-restaurant-desc' => '<p>Restoran, svojom bogatom ponudom domaće, tradicionalne i internacionalne kuhinje kao i raznovrsnom ponudom vina i aperitiva kod posjetioca izaziva jedinstven osjećaj domaćeg ambijenta.</p>
+            <p>Želimo vam omogućiti nezaboravno iskustvo tokom vašeg boravka kod nas, pa smo sa zadovoljstvom otkrili dodatnu pogodnost koja će učiniti vaš boravak još posebnijim.</p>
+            <p class="italic-bold">Svi naši dragi gosti ostvaruju ekskluzivan popust od 10% u Stara Ada Restoranu!</p>
+            <p>Bilo da se odlučite za uživanje u autentičnim lokalnim specijalitetima, romantičnu večeru ili opušten ručak uz Vrbas, vaša posjeta Stara Ada Restoranu sada dolazi s posebnim privilegijama. Samo pokažite svoju rezervaciju ili ključ od apartmana kako biste ostvarili ovu ekskluzivnu ponudu.</p>',
+
+			'about-us' => 'O nama',
+			'about-desc' => '<p>Mi smo Ada Nostra - vaša destinacija za nezaboravan boravak na samo 10 minuta od centra Banja Luke. Smješteni uz obalu Vrbasa, naši apartmani pružaju savršen spoj udobnosti, elegancije i kvalitete usluge.</p>
+			<p>Ada Nostra Apartmani sa zadovoljstvom primaju organizovane grupe od <strong>50+ gostiju</strong>. Bez obzira da li organizujete porodično okupljanje, timski izlet, ili bilo koju drugu manifestaciju, naš tim je spreman da osigura udoban boravak za svakog gosta. Za dodatnu praktičnost, rezervisali smo i posebno <strong>parking mjesto za autobus</strong> kako biste bezbrižno stigli na odredište.</p>',
+
+			'location-desc' => '<p>Osvježite se i napunite energijom uz našu ekskluzivnu uslugu <strong>dnevnog odmora</strong>. Pružamo vam priliku da se relaksirate u udobnosti naših apartmana i uživate u trenutku osvježenja tokom dana.</p>
+			<p>Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan spoj komfora i pristupačnosti sa dobro pozicioniranom lokacijom koja je odlična polazna tačka za sva druga mjesta u našem gradu. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
+			<p>Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost. Nudimo vam prostor gdje se luksuz susreće s prirodom.</p>',
+
+			'reservations' => 'Rezervacije',
 		),
 
-		'apartman-1' => array(
+		'apartment-silver' => array(
 			'title' => 'Apartman 1', 
 		  'description' => 'Prvi apartman', 
 		  //content
