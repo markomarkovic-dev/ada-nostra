@@ -1,5 +1,4 @@
 <?php
-    $apartmentId = "silver";
     include 'includes/global-header.php';
     include 'components/slider.php';
     include 'components/apartment-drawer.php';
@@ -18,54 +17,54 @@
                 </div>
             </div>
             <div class="apartment-data-container">
-                <?= apartmentDrawer($apartmentId); ?>
+                <?= apartmentDrawer($apartmentId, true); ?>
             </div>
         </div>
     </section>
     <section class="features-section">
         <div class="section-container">
-            <span class="sup-heading">Naša priča</span>
-            <h2 class="section-heading">Ada Nostra <span>apartmani</span></h2>
-            <p class="section-desc">Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan spoj komfora i pristupačnosti sa dobro pozicioniranom lokacijom koja je odlična polazna tačka za sva druga mjesta u našem gradu. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.</p>
-            <p class="section-desc">Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost. Nudimo vam prostor gdje se luksuz susreće s prirodom.</p>
+            <span class="sup-heading"><?= $lang['global']['our-story']?></span>
+            <h2 class="section-heading"><?= $lang['global']['ada-apartments-heading']?></h2>
+            <p class="section-desc"><?= $lang['global']['ap-text1']?></p>
+            <p class="section-desc"><?= $lang['global']['ap-text2']?></p>
             <div class="features-container">
-                <div class="features-item">
-                    <div class="features-item-image">
-                        <img src="assets/icons/location.svg" alt="">
-                    </div>
-                    <span>10min od<br> centra grada</span>
+            <div class="features-item">
+                <div class="features-item-image">
+                    <img src="assets/icons/location.svg" alt="">
                 </div>
-                <div class="features-item">
-                    <div class="features-item-image">
-                        <img src="assets/icons/parking.svg" alt="">
-                    </div>
-                    <span>Rezervisan<br> parking</span>
-                </div>
-                <div class="features-item">
-                    <div class="features-item-image">
-                        <img src="assets/icons/entrance.svg" alt="">
-                    </div>
-                    <span>Poseban ulaz<br> za goste</span>
-                </div>
-                <div class="features-item">
-                    <div class="features-item-image">
-                        <img src="assets/icons/wifi.svg" alt="">
-                    </div>
-                    <span>Besplatan<br> WIFI</span>
-                </div>
-                <div class="features-item">
-                    <div class="features-item-image">
-                        <img src="assets/icons/tv.svg" alt="">
-                    </div>
-                    <span>Kablovska<br> televizija</span>
-                </div>
-                <div class="features-item">
-                    <div class="features-item-image">
-                        <img src="assets/icons/ac.svg" alt="">
-                    </div>
-                    <span>Klimatizovane<br> prostorije</span>
-                </div>
+                <span><?= $lang['global']['feature-location'] ?></span>
             </div>
+            <div class="features-item">
+                <div class="features-item-image">
+                    <img src="assets/icons/parking.svg" alt="">
+                </div>
+                <span><?= $lang['global']['feature-parking'] ?></span>
+            </div>
+            <div class="features-item">
+                <div class="features-item-image">
+                    <img src="assets/icons/entrance.svg" alt="">
+                </div>
+                <span><?= $lang['global']['feature-entrance'] ?></span>
+            </div>
+            <div class="features-item">
+                <div class="features-item-image">
+                    <img src="assets/icons/wifi.svg" alt="">
+                </div>
+                <span><?= $lang['global']['feature-wifi'] ?></span>
+            </div>
+            <div class="features-item">
+                <div class="features-item-image">
+                    <img src="assets/icons/tv.svg" alt="">
+                </div>
+                <span><?= $lang['global']['feature-tv'] ?></span>
+            </div>
+            <div class="features-item">
+                <div class="features-item-image">
+                    <img src="assets/icons/ac.svg" alt="">
+                </div>
+                <span><?= $lang['global']['feature-ac'] ?></span>
+            </div>
+        </div>
         </div>
     </section>
     <!-- <section class="view360">
@@ -114,7 +113,6 @@
     include_once 'components/modal-reservation.php';
 ?>
 
-<script src="assets/js/home.js"></script>
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/gallery-modal.js"></script>

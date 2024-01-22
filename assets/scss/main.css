@@ -540,6 +540,36 @@ main {
 .apartment-drawer .apartment-price strong {
   font-size: 3.2rem;
 }
+.apartment-drawer-silver .apartment-price {
+  color: #C6C6C6;
+}
+.apartment-drawer-yellow .apartment-price {
+  color: #F7A102;
+}
+.apartment-drawer-pink .apartment-price {
+  color: #D20163;
+}
+.apartment-drawer-gold .apartment-price {
+  color: #F7B900;
+}
+.apartment-drawer-green .apartment-price {
+  color: #032707;
+}
+.apartment-drawer-grey .apartment-price {
+  color: #83848D;
+}
+.apartment-drawer-olive-green .apartment-price {
+  color: #7C7C00;
+}
+.apartment-drawer-orange .apartment-price {
+  color: #F66205;
+}
+.apartment-drawer-brown .apartment-price {
+  color: #935020;
+}
+.apartment-drawer-burgundy .apartment-price {
+  color: #6C1101;
+}
 
 @keyframes showSlow {
   0% {
@@ -744,14 +774,18 @@ main {
   margin-bottom: 3.1rem;
 }
 
-#price {
+#price, .chosen-apartment {
   text-align: right;
   margin-bottom: 2rem;
   font-size: 2rem;
 }
-#price span {
+#price span, .chosen-apartment span {
   font: inherit;
   font-weight: 600;
+}
+
+.chosen-apartment {
+  margin-bottom: 1.3rem;
 }
 
 .header {
@@ -829,9 +863,9 @@ main {
     transform: translateY(5.6rem);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .header .logo-fixed {
-    padding: 1.9rem 1.5rem;
+    padding: 1.5rem;
   }
 }
 .header .logo-compound {
@@ -845,7 +879,7 @@ main {
   width: 15.5rem;
   transition: all 0.3s ease-in-out;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .header .logo-compound .logo-icon,
   .header .logo-compound .logo-text {
     width: 11.5rem;
@@ -889,7 +923,7 @@ main {
 @media (max-width: 1200px) {
   .header.header-sticky .logo-fixed {
     transform: translateY(-61%);
-    padding: 1.9rem 1.5rem;
+    padding: 1.5rem;
   }
 }
 
@@ -1180,6 +1214,14 @@ input:focus, textarea:focus, select:focus {
   border-color: #57A4FF;
 }
 
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+  input, textarea, select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border-radius: 0;
+  }
+}
 .input-wrapper {
   display: flex;
   flex-direction: column;

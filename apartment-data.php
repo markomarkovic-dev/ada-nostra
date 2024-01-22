@@ -169,7 +169,7 @@
             ),
         ),
 
-        "royal-green" => array(
+        "green" => array(
             "name" => $lang['global']['60'],
             "number" => "60",
             "price" => array(
@@ -318,7 +318,7 @@
             ),
         ),
 
-        "light-brown" => array(
+        "brown" => array(
             "name" => $lang['global']['65'],
             "number" => "65",
             "price" => array(
@@ -348,7 +348,7 @@
             ),
         ),
 
-        "cherry" => array(
+        "burgundy" => array(
             "name" => $lang['global']['66'],
             "number" => "66",
             "price" => array(

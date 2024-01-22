@@ -74,8 +74,8 @@
             transform: translateY(5.6rem);
         }
 
-        @media(max-width: 768px) {
-            padding: 1.9rem 1.5rem;
+        @media(max-width: 1200px) {
+            padding: 1.5rem;
         }
     }
 
@@ -90,7 +90,7 @@
             width: 15.5rem;
             transition: all .3s ease-in-out;
 
-            @media(max-width: 768px) {
+            @media(max-width: 1200px) {
                 width: 11.5rem;
             }
         }
@@ -135,7 +135,7 @@
 
             @media(max-width: 1200px) {
                 transform: translateY(-61%);
-                padding: 1.9rem 1.5rem;
+                padding: 1.5rem;
             }
         }
     }

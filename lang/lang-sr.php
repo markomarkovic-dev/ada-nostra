@@ -30,6 +30,7 @@
 			'64' => 'Narandzasti Apartman',
 			'65' => 'Braon Apartman',
 			'66' => 'Bordo Apartman',
+			'no' => "br.",
 
 			'form-heading-msg' => 'Radujemo se što ste odabrali datum Vašeg dolaska.
 			Molimo vas da ispod unesete detalje rezervacije.',
@@ -55,6 +56,7 @@
 			'field-check' => "Provjerite sva polja",
 			'view-more' => 'Vidi više',
 			'our-story' => 'Naša priča',
+			'chosen-apartment' => 'Odabrani apartman:',
 
 			'feature-location' => '10min od<br> centra grada',
 			'feature-parking' => 'Rezervisan<br> parking',
@@ -65,14 +67,19 @@
 			'feature-conference' => 'Konferencijska<br> sala',
 			'feature-pets' => 'Pet<br> friendly',
 
-			'contact-us-text' => 'Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj.'
+			'contact-us-text' => 'Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj.',
+
+			//apartman
+			'our-story' => 'Naša priča',
+			'ap-text1' => 'Na posljednjoj etaži novoizgrađene zgrade, Ada Nostra apartmani nude izuzetan spoj komfora i pristupačnosti sa dobro pozicioniranom lokacijom koja je odlična polazna tačka za sva druga mjesta u našem gradu. Sa posebnim ulazom za naše goste, stvaramo osećaj ekskluzivnosti od samog početka.',
+			'ap-text2' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost. Nudimo vam prostor gdje se luksuz susreće s prirodom.',
+			'ada-apartments-heading' => 'Ada Nostra <span>apartmani</span>',
 		),
 
 		'home' => array(
 		  	'title' => 'Apartmani', 
 			'description' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima,
 			profesionalna usluga i najbolje opremljeni apartmani.',
-			'ada-apartments-heading' => 'Ada Nostra <span>apartmani</span>',
 			'ada-apartments-desc' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima, profesionalna usluga i najbolje opremljeni apartmani.',
 
 			'our-pleasure' => 'Naš užitak',
@@ -93,11 +100,65 @@
 			'reservations' => 'Rezervacije',
 		),
 
-		'apartment-silver' => array(
-			'title' => 'Apartman 1', 
+		'silver-apartment' => array(
+			'title' => 'Srebreni Apartman', 
 		  'description' => 'Prvi apartman', 
 		  //content
-	  ),
+	  	),
+
+		  'yellow-apartment' => array(
+			'title' => 'Žuti Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'pink-apartment' => array(
+			'title' => 'Rozi Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'gold-apartment' => array(
+			'title' => 'Zlatni Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'green-apartment' => array(
+			'title' => 'Zeleni Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'grey-apartment' => array(
+			'title' => 'Sivi Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'olive-green-apartment' => array(
+			'title' => 'Maslinasti Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'orange-apartment' => array(
+			'title' => 'Narandzasti Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'brown-apartment' => array(
+			'title' => 'Braon Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
+
+		  'burgundy-apartment' => array(
+			'title' => 'Bordo Apartman', 
+		  'description' => 'Prvi apartman', 
+		  //content
+	  	),
 
 	  'thank-you' => array(
 		'title' => 'Hvala vam!', 

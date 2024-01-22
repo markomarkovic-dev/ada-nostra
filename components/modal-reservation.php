@@ -40,21 +40,22 @@ if (isset($_POST['submit'])) {
             $mail->SMTPDebug = false;
             $mail->Host = 'smtp.hostinger.com'; // Zamjeni sa svojim SMTP serverom
             $mail->SMTPAuth   = true;
-            require 'smtp-credentials.php'; // Uključivanje kredencijala
+            require 'includes/smtp-credentials.php'; // Uključivanje kredencijala
             // Sadržaj emaila za vlasnika sajta
             $mail->setFrom('rezervacije@adanostra.com', 'Ada Nostra');
             $mail->addReplyTo('rezervacije@adanostra.com', 'Ada Nostra');
             $mail->addAddress('rezervacije@adanostra.com', 'Ada Nostra'); // Zameni sa emailom vlasnika
             $mail->isHTML(true);
             $mail->Subject = 'Nova rezervacija - '.$name.'';
-            $mail->Body = "Dolazak: $dateFrom<br>
+            $mail->Body = "Dolazak: <b>$dateFrom</b><br>
                 Odlazak: <b>$dateTo</b><br>
                 Broj gostiju: <b>$guests</b><br>
                 Ime i prezime: <b>$name</b><br>
-                Očekivano vreme dolaska: <b>$checkIn</b><br>
+                Očekivano vreme dolaska: <b>$checkIn</b><b>h</b><br>
                 Broj telefona: <b>$phone</b><br>
                 Email: <b>$email</b><br>
-                Dodatne napomene: <b>$notes</b>";
+                Dodatne napomene: <b>$notes</b><br>
+                " . (isset($home) ? '' : "Odabrani apartman: <b>" . $apartmentData[$apartmentId]['name'] . "</b>");        
             // Slanje emaila vlasniku
             $mail->send();
             
@@ -121,7 +122,7 @@ if (isset($_POST['submit'])) {
                     <div class="input-wrapper input-wrapper-icon">
                         <img src="assets/icons/guests-small.svg" alt="">
                         <label for="guest-count"><?= $lang['global']['guests'] ?></label>
-                            <select id="guest-count">
+                            <select id="guest-count" name="guest-count">
                                 <?php 
                                     $guestCount = isset($home) ? 29 : $apartmentData[$apartmentId]["max-guests"];
                                     for ($i = 1; $i <= $guestCount; $i++) {
@@ -172,6 +173,7 @@ if (isset($_POST['submit'])) {
                             <input type="text" name="company" id="company">
                         </div>
                     </div>
+                    <?= isset($home) ? '' : "<p class='chosen-apartment'><span>" . $apartmentData[$apartmentId]['name'] . "</span></p>"?></p>
                     <p id="price"><span id="price-label">Cijena:</span> <span id="price-number"><?= isset($home) ? '50' : $apartmentData[$apartmentId]['price'][$language]; ?></span><span id="currency"><?= $lang["global"]["currency"] ?></span</p>
                 </div>
                     

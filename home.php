@@ -52,7 +52,7 @@
     <section class="features-section">
         <div class="section-container">
             <span class="sup-heading"><?= $lang['global']['our-story'] ?></span>
-            <h2 class="section-heading"><?= $lang[$pagename]['ada-apartments-heading'] ?></h2>
+            <h2 class="section-heading"><?= $lang['global']['ada-apartments-heading'] ?></h2>
             <p class="section-desc"><?= $lang[$pagename]['ada-apartments-desc'] ?></p>
         <div class="features-container">
             <div class="features-item">
@@ -127,7 +127,7 @@
    <section>
         <div class="section-container">
             <span class="sup-heading"><?= $lang[$pagename]['about-us'] ?></span>
-                <h2 class="section-heading"><?= $lang[$pagename]['ada-apartments-heading'] ?></h2>
+                <h2 class="section-heading"><?= $lang['global']['ada-apartments-heading'] ?></h2>
                 <div class="section-text">
                 <?= $lang[$pagename]['about-desc'] ?>
             </div>

@@ -81,8 +81,11 @@ $(document).ready(function ($) {
     $("#guest-count option").filter(function() {
         return $(this).text() === $("#q-guest-count").val();
     }).prop('selected', true);
-    checkGuestPrice($("#q-guest-count"));
-  })
+    $("#q-guest-count option").filter(function() {
+      return $(this).text() === $("#guest-count").val();
+    }).prop('selected', true);
+      checkGuestPrice($("#q-guest-count"));
+    })
 
   $('input[name="dates"], input[name="date-from"], input[name="date-to"]').daterangepicker( {
     "timePicker24Hour": true,
@@ -134,6 +137,10 @@ $(document).ready(function ($) {
   }).on('show.daterangepicker', function (ev, picker) {
   picker.container.find(".calendar-table").hide();
   });
+
+  $("#guest-count").change(function(){
+    checkGuestPrice(this);
+  });
 });
 
 function termsBanner() {
@@ -177,9 +184,5 @@ function termsBanner() {
       $(deAllow).appendTo('body');
     }
   }
-
-  $("#guest-count").change(function(){
-    checkGuestPrice(this);
-  });
 }
 

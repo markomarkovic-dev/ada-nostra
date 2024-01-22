@@ -1,11 +1,11 @@
 <?php 
-function apartmentDrawer($iD) {
+function apartmentDrawer($iD, $isApartmanPage) {
     global $apartmentData, $language, $lang;
     echo '
     <div class="apartment-drawer">
         <div class="apartment-drawer-left">
             <div class="apartment-details">
-                <h3>' . $apartmentData[$iD]["name"] . '</h3>
+                <h3>' . $apartmentData[$iD]["name"] . ($isApartmanPage == true ? " | " . $lang['global']['no'] . " " . $apartmentData[$iD]["number"] : '') . '</h3>
                 <div class="apartment-details-guests">
                     <span>do</span>
                     <strong>' . $apartmentData[$iD]["max-guests"] . '</strong>
@@ -18,7 +18,7 @@ function apartmentDrawer($iD) {
                 </div>
             </div>
         </div>
-        <div class="apartment-drawer-right">
+        <div class="apartment-drawer-right apartment-drawer-'.$iD.'">
             <div class="apartment-price">
                 <span>Cijena po danu:</span>
                 <strong>' . $apartmentData[$iD]["price"][$language] . ''. $lang["global"]["currency"] .'</strong>

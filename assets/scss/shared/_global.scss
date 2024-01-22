@@ -516,6 +516,66 @@ main {
             font-size: 3.2rem;
         }
     }
+
+    &-silver {
+        .apartment-price {
+            color: $silver;
+        }
+    }
+
+    &-yellow {
+        .apartment-price {
+            color: $yellow;
+        }
+    }
+
+    &-pink {
+        .apartment-price {
+            color: $pink;
+        }
+    }
+
+    &-gold {
+        .apartment-price {
+            color: $gold;
+        }
+    }
+
+    &-green {
+        .apartment-price {
+            color: $green;
+        }
+    }
+
+    &-grey {
+        .apartment-price {
+            color: $grey;
+        }
+    }
+
+    &-olive-green {
+        .apartment-price {
+            color: $olive-green;
+        }
+    }
+
+    &-orange {
+        .apartment-price {
+            color: $orange;
+        }
+    }
+
+    &-brown {
+        .apartment-price {
+            color: $brown;
+        }
+    }
+    
+    &-burgundy {
+        .apartment-price {
+            color: $burgundy;
+        }
+    }
 }
 
 @keyframes showSlow {
@@ -738,7 +798,7 @@ main {
   }
 
 
-  #price {
+  #price, .chosen-apartment {
     text-align: right;
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -747,4 +807,8 @@ main {
         font: inherit;
         font-weight: 600;
     }
+  }
+
+  .chosen-apartment {
+    margin-bottom: 1.3rem;
   }
