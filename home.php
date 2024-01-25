@@ -18,7 +18,7 @@
             </div>
             <div class="reservation-container">
                 <div class="quick-reservation">
-                    <h2>Rezervišite termin!</h2>
+                    <h2><?= $lang[$pagename]['book-an-appointment'] ?></h2>
                     <div class="quick-reservation-form">
                        <div class="input-wrapper input-wrapper-icon">
                             <img src="assets/icons/calendar-day.svg" alt="">

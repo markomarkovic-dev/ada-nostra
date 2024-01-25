@@ -86,6 +86,7 @@
 			'description' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima,
 			profesionalna usluga i najbolje opremljeni apartmani.',
 			'ada-apartments-desc' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima, profesionalna usluga i najbolje opremljeni apartmani.',
+			'book-an-appointment' => 'Rezervišite termin!',
 
 			'our-pleasure' => 'Naš užitak',
 			'ada-restaurant-heading' => 'Restoran <span>Stara Ada</span>',
