@@ -68,6 +68,7 @@
 
         @media(min-width: 1201px) and (max-width: 1500px) {
             padding: 1.3rem 3.5rem;
+            width: 24rem;
         }
         
         @media(min-width: 1201px) and (max-width: 1500px) {
@@ -84,6 +85,12 @@
         flex-direction: column;
         gap: .5rem;
         transition: all .3s ease-in-out;
+
+        @media(min-width: 1201px) and (max-width: 1500px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
     
         .logo-icon,
         .logo-text {
@@ -97,7 +104,11 @@
 
         .logo-icon {
             @media(min-width: 1201px) and (max-width: 1500px) {
-                display: none;
+                display: block;
+                height: 30px;
+                width: unset;
+                position: relative;
+                bottom: 0.6rem;
             }
         }
     }

@@ -239,7 +239,7 @@ main {
     margin-right: auto;
     margin-bottom: 7.1rem;
 
-    strong {
+    strong, a {
         font-size: inherit;
     }
 
@@ -811,4 +811,21 @@ main {
 
   .chosen-apartment {
     margin-bottom: 1.3rem;
+  }
+
+  .reservation-floating {
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    transition: all .3s ease-out;
+    transform: translateY(0%);
+    z-index: 30;
+  }
+
+  .reservation-static {
+    &.in-viewport {
+        + .reservation-floating {
+            transform: translateY(100%);
+        }
+    }
   }

@@ -70,8 +70,8 @@ if (isset($_POST['submit'])) {
             // Postavljanje tela emaila korišćenjem sadržaja HTML fajla
             // Zameni placeholder-e sa stvarnim vrijednostima
             $emailTemplate = str_replace(
-                ['%NAME%', '%DOMAIN%'],
-                [$name, $siteUrl],
+                ['%RESPECTED%','%NAME%', '%DOMAIN%', '%THANKYOU%', '%CALLBACK%', '%AVAILABLE%', '%ADDITIONAL%', '%THANKYOUAGAIN%', '%RESPECTFULLY%'],
+                [$lang['global']['mail-respected'], $name, $siteUrl, $lang['global']['mail-thankyou'], $lang['global']['mail-callback'], $lang['global']['mail-available'], $lang['global']['mail-additional'], $lang['global']['mail-thankyou-again'], $lang['global']['mail-respectfully']],
                 $emailTemplate
             );
     

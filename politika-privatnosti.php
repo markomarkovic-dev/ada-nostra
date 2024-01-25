@@ -5,8 +5,8 @@ include 'includes/global-header.php';
 <main>
     <section class="simple-page">
         <div class="section-container">
-            <span class="sup-heading"><?= $lang[$pagename]['house-rules']?></span>
-            <?= $lang[$pagename]['bonton-text']?>
+            <span class="sup-heading">Ada Nostra</span>
+            <?= $lang[$pagename]['policy-text']?>
         </div>
     </section>
 </main>

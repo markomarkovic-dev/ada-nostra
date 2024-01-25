@@ -3,7 +3,20 @@
     $checkMetaImg = "$siteUrl/assets/images/cvu-metaimg.png";
     $pageTitle = $lang[$pagename]['title'];
     $pageDescription = $lang[$pagename]['description'];
-    $contentLang = $language === 'en' ? "English" : "Serbian";
+    switch ($language) {
+        case 'en':
+            $contentLang = "English";
+            break;
+        case 'sr':
+            $contentLang = "Serbian";
+            break;
+        case 'de':
+            $contentLang = "German";
+            break;
+        default:
+            $contentLang = "Unknown Language";
+            break;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $language;?>">

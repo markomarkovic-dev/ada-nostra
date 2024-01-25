@@ -69,12 +69,6 @@
             </div>
             <div class="features-item">
                 <div class="features-item-image">
-                    <img src="assets/icons/entrance.svg" alt="">
-                </div>
-                <span><?= $lang['global']['feature-entrance'] ?></span>
-            </div>
-            <div class="features-item">
-                <div class="features-item-image">
                     <img src="assets/icons/wifi.svg" alt="">
                 </div>
                 <span><?= $lang['global']['feature-wifi'] ?></span>
@@ -144,7 +138,7 @@
                         <?= $lang[$pagename]['location-desc'] ?>
                     </div>
                     <img src="assets/icons/calendar-big.svg" alt="" class="sup-icon">
-                    <span class="sup-heading"><?= $lang[$pagename]['reservations'] ?></span>
+                    <span class="sup-heading"><?= $lang['global']['reservations'] ?></span>
                     <div class="section-text">
                         <p><?= $lang['global']['contact-us-text'] ?></p>
                         <a href="tel:+38765300216" class="big-info-centered">+387 65 300 216</a>
@@ -161,5 +155,6 @@
 ?>
 
 <script src="assets/js/home.js"></script>
+<script src="assets/js/animate-on-scroll.js"></script>
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>

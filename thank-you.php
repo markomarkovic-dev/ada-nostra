@@ -6,11 +6,9 @@ $name = $_GET['name'];
 <main>
     <section class="thank-you">
         <div class="section-container">
-            <span class="sup-heading">Dragi <?= $name ?></span>
-            <h2 class="section-heading">HVALA NA REZERVACIJI!</h2>
-            <p class="section-desc">Srdačno hvala na poverenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima. Vaša rezervacija je uspešno primljena, i jedva čekamo da vam pružimo nezaboravan doživljaj.</p>
-            <p class="section-desc">Očekujte e-mail sa potvrdom rezervacije u narednih nekoliko minuta. Ukoliko imate bilo kakvih dodatnih pitanja ili posebnih zahteva, slobodno nas kontaktirajte. Naša ekipa je tu da vam pomogne i osigura da vaš boravak bude ugodan.</p>
-            <p class="section-desc"><strong>S poštovanjem,<br>Ada Nostra Tim</strong></p>
+            <span class="sup-heading"><?= $lang['global']['respected'] . " " . $name ?></span>
+            <h2 class="section-heading"><?= $lang[$pagename]['thanks-for-reservation'] ?></h2>
+            <?= $lang[$pagename]['thank-you-text'] . $name ?>
         </div>
     </section>
 </main>

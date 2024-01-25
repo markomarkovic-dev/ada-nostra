@@ -42,12 +42,6 @@
             </div>
             <div class="features-item">
                 <div class="features-item-image">
-                    <img src="assets/icons/entrance.svg" alt="">
-                </div>
-                <span><?= $lang['global']['feature-entrance'] ?></span>
-            </div>
-            <div class="features-item">
-                <div class="features-item-image">
                     <img src="assets/icons/wifi.svg" alt="">
                 </div>
                 <span><?= $lang['global']['feature-wifi'] ?></span>
@@ -96,12 +90,13 @@
     <section>
         <div class="section-container reservation-block">
             <img src="assets/icons/calendar-big.svg" alt="" class="sup-icon">
-            <span class="sup-heading">Rezervacije</span>
+            <span class="sup-heading"><?= $lang['global']['reservations'] ?></span>
             <div class="btn-center">
-                <button class="btn btn-primary modal-open" data-trigger="reservation">Rezerviši apartman</button>
+                <button class="btn btn-primary modal-open reservation-static animate-it animation-loop" data-trigger="reservation"><?= $lang['global']['book-apartment'] ?></button>
+                <button class="btn btn-primary modal-open reservation-floating" data-trigger="reservation"><?= $lang['global']['book-apartment'] ?></button>
             </div>
             <div class="section-text">
-                <p>Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj.</p>
+                <p><?= $lang['global']['contact-for-reservation'] ?></p>
                 <a href="tel:+38765300216" class="big-info-centered">+387 65 300 216</a>
                 <a href="mailto:rezervacije@adanostra.com" class="big-info-centered">rezervacije@adanostra.com</a>
             </div>
@@ -113,6 +108,7 @@
     include_once 'components/modal-reservation.php';
 ?>
 
+<script src="assets/js/animate-on-scroll.js"></script>
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/gallery-modal.js"></script>

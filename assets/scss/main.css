@@ -290,7 +290,7 @@ main {
   margin-right: auto;
   margin-bottom: 7.1rem;
 }
-.section-desc strong {
+.section-desc strong, .section-desc a {
   font-size: inherit;
 }
 @media (max-width: 991px) {
@@ -788,6 +788,19 @@ main {
   margin-bottom: 1.3rem;
 }
 
+.reservation-floating {
+  position: fixed;
+  bottom: 0;
+  right: 2rem;
+  transition: all 0.3s ease-out;
+  transform: translateY(0%);
+  z-index: 30;
+}
+
+.reservation-static.in-viewport + .reservation-floating {
+  transform: translateY(100%);
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -856,6 +869,7 @@ main {
 @media (min-width: 1201px) and (max-width: 1500px) {
   .header .logo-fixed {
     padding: 1.3rem 3.5rem;
+    width: 24rem;
   }
 }
 @media (min-width: 1201px) and (max-width: 1500px) {
@@ -874,6 +888,13 @@ main {
   gap: 0.5rem;
   transition: all 0.3s ease-in-out;
 }
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .header .logo-compound {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
 .header .logo-compound .logo-icon,
 .header .logo-compound .logo-text {
   width: 15.5rem;
@@ -887,7 +908,11 @@ main {
 }
 @media (min-width: 1201px) and (max-width: 1500px) {
   .header .logo-compound .logo-icon {
-    display: none;
+    display: block;
+    height: 30px;
+    width: unset;
+    position: relative;
+    bottom: 0.6rem;
   }
 }
 .header.header-sticky {
