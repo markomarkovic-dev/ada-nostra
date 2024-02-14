@@ -5,7 +5,7 @@ function galleryImage() {
 
   galleryLinks.click(function(event) {
     event.preventDefault();
-    currentIndex = galleryLinks.index(this.parentElement);
+    currentIndex = galleryLinks.index(this);
 
     openImageModal($(this).attr("src"));
   });
@@ -14,6 +14,9 @@ function galleryImage() {
     var modal = $(
       `<div class="image-modal">
           <img src="assets/icons/close.svg" class="image-close"/>
+          <div class="current-image">
+            <img src="${imageUrl}"/>
+          </div>
           <div class="next-prev-image">
             <div class="prev-image">
               <img src="assets/icons/left.svg"/>
@@ -23,9 +26,6 @@ function galleryImage() {
             </div>
           </div>
       </div>`);
-    var modalImage = $('<img>').attr('src', imageUrl);
-
-    modal.prepend(modalImage);
 
     $('body').append(modal);
 
@@ -45,13 +45,13 @@ function galleryImage() {
   function showPrevImage() {
     currentIndex = (currentIndex - 1 + galleryLinks.length) % galleryLinks.length;
     var prevImageUrl = galleryLinks.eq(currentIndex).attr('src');
-    $('.image-modal > img:not(.image-close)').attr('src', prevImageUrl);
+    $('.image-modal .current-image img').attr('src', prevImageUrl);
   }
 
   function showNextImage() {
     currentIndex = (currentIndex + 1) % galleryLinks.length;
     var nextImageUrl = galleryLinks.eq(currentIndex).attr('src');
-    $('.image-modal > img:not(.image-close)').attr('src', nextImageUrl);
+    $('.image-modal .current-image img').attr('src', nextImageUrl);
   }
 }
 

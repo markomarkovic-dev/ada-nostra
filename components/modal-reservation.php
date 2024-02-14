@@ -70,8 +70,8 @@ if (isset($_POST['submit'])) {
             // Postavljanje tela emaila korišćenjem sadržaja HTML fajla
             // Zameni placeholder-e sa stvarnim vrijednostima
             $emailTemplate = str_replace(
-                ['%RESPECTED%','%NAME%', '%DOMAIN%', '%THANKYOU%', '%CALLBACK%', '%AVAILABLE%', '%ADDITIONAL%', '%THANKYOUAGAIN%', '%RESPECTFULLY%'],
-                [$lang['global']['mail-respected'], $name, $siteUrl, $lang['global']['mail-thankyou'], $lang['global']['mail-callback'], $lang['global']['mail-available'], $lang['global']['mail-additional'], $lang['global']['mail-thankyou-again'], $lang['global']['mail-respectfully']],
+                ['%RESPECTED%','%NAME%', '%DOMAIN%', '%THANKYOU%', '%CALLBACK%', '%FOREIGN%','%FOREIGNDATA%', '%AVAILABLE%', '%ADDITIONAL%', '%THANKYOUAGAIN%', '%RESPECTFULLY%'],
+                [$lang['global']['mail-respected'], $name, $siteUrl, $lang['global']['mail-thankyou'], $lang['global']['mail-callback'], $lang['global']['mail-foreign'], $lang['global']['mail-foreign-data'], $lang['global']['mail-available'], $lang['global']['mail-additional'], $lang['global']['mail-thankyou-again'], $lang['global']['mail-respectfully']],
                 $emailTemplate
             );
     
@@ -174,7 +174,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                     <?= isset($home) ? '' : "<p class='chosen-apartment'><span>" . $apartmentData[$apartmentId]['name'] . "</span></p>"?></p>
-                    <p id="price"><span id="price-label">Cijena:</span> <span id="price-number"><?= isset($home) ? '50' : $apartmentData[$apartmentId]['price'][$language]; ?></span><span id="currency"><?= $lang["global"]["currency"] ?></span</p>
+                    <p id="price"><span id="price-label"><?= $lang['global']['price'] ?>:</span> <span id="price-number"><?= isset($home) ? '50' : $apartmentData[$apartmentId]['price'][$language]; ?></span><span id="currency"><?= $lang["global"]["currency"] ?></span</p>
                 </div>
                     
                 </div>

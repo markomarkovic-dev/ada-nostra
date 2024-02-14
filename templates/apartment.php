@@ -58,6 +58,16 @@
                 </div>
                 <span><?= $lang['global']['feature-ac'] ?></span>
             </div>
+            <?php 
+                if($apartmentData[$apartmentId]['pets'] == true) {
+                    echo '<div class="features-item">
+                    <div class="features-item-image">
+                        <img src="assets/icons/pet-friendly.svg" alt="">
+                    </div>
+                    <span>'.$lang["global"]["feature-pets"].'</span>
+                </div>';
+                }
+            ?>
         </div>
         </div>
     </section>

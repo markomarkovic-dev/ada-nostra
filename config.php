@@ -11,7 +11,7 @@ if ($_SERVER['SERVER_ADDR'] == '127.0.0.1' || $_SERVER['SERVER_ADDR'] == '::1') 
 $siteName = "Ada Nostra";
 $mainlang = 'sr';
 
-$siteUrl = "https://develop.adanostra.com";
+$siteUrl = "https://adanostra.com";
 
 //posjeceni url
 $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

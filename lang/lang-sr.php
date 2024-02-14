@@ -3,6 +3,8 @@
 		'global' => array(
 			"currency" => "KM",
 			'nav-home' => 'Početna',
+			'nav-privacy' => 'Politika privatnosti',
+			'nav-bonton' => 'Bonton apartmana',
 			'language' => 'Jezik',
 			'rights' => 'Sva prava zadržana',
             'captcha-text' => 'Website je zaštićen',
@@ -13,15 +15,20 @@
 			'reservations' => 'Rezervacije',
 			'book-apartment' => 'Rezerviši apartman',
 			'contact-for-reservation' => 'Kontaktirajte nas kako biste rezervisali svoj savršeni odmor. Očekujemo Vas s osmijehom i željom da vam pružimo nezaboravan doživljaj.',
+			'ada-nostra-apartments' => 'Ada Nostra Apartmani',
+			'copyright' => 'Copyright',
+			'price' => 'Cijena',
+			'up-to' => 'do',
+			'price-per-day' => 'Cijena po danu',
 
-			'56' => 'Srebreni Apartman',
+			'56' => 'Srebrni Apartman',
 			'57' => 'Žuti Apartman',
 			'58' => 'Rozi Apartman',
 			'59' => 'Zlatni Apartman',
 			'60' => 'Zeleni Apartman',
 			'61' => 'Sivi Apartman',
 			'63' => 'Maslinasti Apartman',
-			'64' => 'Narandzasti Apartman',
+			'64' => 'Narandžasti Apartman',
 			'65' => 'Braon Apartman',
 			'66' => 'Bordo Apartman',
 			'no' => "br.",
@@ -74,10 +81,12 @@
 			//email template
 			'mail-respected' => 'Poštovani',
 			'mail-thankyu' => 'Srdačno Vam zahvaljujemo na izboru Ada Nostra Apartmana za vaš predstojeći boravak. Vaša rezervacija je uspešno zaprimljena, i radujemo se što ćemo vam pružiti nezaboravan doživljaj.',
-			'mail-callback' => 'Naš tim će vas kontaktirati telefonski u narednih <strong>24 sata</strong> kako bismo potvrdili detalje rezervacije, odgovorili na eventualna pitanja i prilagodili vaš boravak prema vašim preferencijama.',
-			'mail-available' => 'Molimo vas da budete dostupni tokom narednih dana radi brze i efikasne finalizacije vaše rezervacije.',
+			'mail-callback' => 'Kako bi vaša rezervacija bila validna, potrebno je da u periodu od naredna 24h izvršite uplatu avansa u iznosu od 50% vaše rezervacije, na naš račun:',
+			'mail-foreign' => 'ili na devizni račun ukoliko se uplata vrši iz inostranstva:',
+			'mail-foreign-data' => 'Banka: <strong>*Neka Banka*<br></strong>Adresa:<strong> *Adresa banke*</strong><br type="_moz">',
+			'mail-available' => 'Samim tim vaša rezervacija ce biti brzo i efikasno autorizovana. Molimo vas da budete dostupni tokom narednih dana radi brze i efikasne finalizacije vaše rezervacije.',
 			'mail-additional' => 'U međuvremenu, ako imate bilo kakvih dodatnih pitanja ili specifičnih zahtjeva, slobodno nas kontaktirajte putem e-mail adrese <strong>rezervacije@adanostra.com</strong> ili na broj telefona<br><strong>+387 65 300 216.</strong>',
-			'mail-thankyou-again' => 'Hvala vam još jednom na povjerenju. Radujemo se prilici da vam pružimo vrhunsko iskustvo u našim apartmanima.',
+			'mail-thankyou-again' => 'Hvala vam na ukazanom povjerenju. Radujemo se prilici da vam pružimo vrhunsko iskustvo u našim apartmanima.',
 			'mail-respectfully' => 'S poštovanjem,<br>Ada Nostra Tim',
 		),
 
@@ -106,61 +115,61 @@
 
 		'silver-apartment' => array(
 			'title' => 'Srebreni Apartman', 
-		  'description' => 'Prvi apartman', 
+		  	'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'yellow-apartment' => array(
 			'title' => 'Žuti Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'pink-apartment' => array(
 			'title' => 'Rozi Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'gold-apartment' => array(
 			'title' => 'Zlatni Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'green-apartment' => array(
 			'title' => 'Zeleni Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'grey-apartment' => array(
 			'title' => 'Sivi Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'olive-green-apartment' => array(
 			'title' => 'Maslinasti Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'orange-apartment' => array(
-			'title' => 'Narandzasti Apartman', 
-		  'description' => 'Prvi apartman', 
+			'title' => 'Narandžasti Apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'brown-apartment' => array(
 			'title' => 'Braon Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
 		  'burgundy-apartment' => array(
 			'title' => 'Bordo Apartman', 
-		  'description' => 'Prvi apartman', 
+		  'description' => 'Svaki od naših apartmana je poseban, poput palete boja koje oživljavaju svaki prostor. Moderni, ali s toplim tonovima, prilagođeni svakom gostu koji cijeni eleganciju i udobnost.', 
 		  //content
 	  	),
 
@@ -169,7 +178,7 @@
 	  'description' => 'Srdačno hvala na poverenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima.', 
 	  'thanks-for-reservation' => 'HVALA NA REZERVACIJI!',
 	  'thank-you-text' => '<p class="section-desc">Srdačno hvala na poverenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima. Vaša rezervacija je uspešno primljena, i jedva čekamo da vam pružimo nezaboravan doživljaj.</p>
-	  <p class="section-desc">Očekujte e-mail sa potvrdom rezervacije u narednih nekoliko minuta. Ukoliko imate bilo kakvih dodatnih pitanja ili posebnih zahteva, slobodno nas kontaktirajte. Naša ekipa je tu da vam pomogne i osigura da vaš boravak bude ugodan.</p>
+	  <p class="section-desc">Očekujte e-mail sa instrukcijama. Ukoliko imate bilo kakvih dodatnih pitanja ili posebnih zahteva, slobodno nas kontaktirajte. Naša ekipa je tu da vam pomogne i osigura da vaš boravak bude ugodan.</p>
 	  <p class="section-desc"><strong>S poštovanjem,<br>Ada Nostra Tim</strong></p>',
   ),
 

@@ -7,7 +7,7 @@ function apartmentDrawer($iD, $isApartmanPage) {
             <div class="apartment-details">
                 <h3>' . $apartmentData[$iD]["name"] . ($isApartmanPage == true ? " | " . $lang['global']['no'] . " " . $apartmentData[$iD]["number"] : '') . '</h3>
                 <div class="apartment-details-guests">
-                    <span>do</span>
+                    <span>'. $lang["global"]["up-to"] .'</span>
                     <strong>' . $apartmentData[$iD]["max-guests"] . '</strong>
                     <img src="assets/icons/guests.svg" alt="">
                     ';
@@ -20,7 +20,7 @@ function apartmentDrawer($iD, $isApartmanPage) {
         </div>
         <div class="apartment-drawer-right apartment-drawer-'.$iD.'">
             <div class="apartment-price">
-                <span>Cijena po danu:</span>
+                <span>'. $lang["global"]["price-per-day"] .':</span>
                 <strong>' . $apartmentData[$iD]["price"][$language] . ''. $lang["global"]["currency"] .'</strong>
             </div>
         </div>

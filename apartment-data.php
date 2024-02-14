@@ -10,12 +10,13 @@
         "silver" => array(
             "name" => $lang['global']['56'],
             "number" => "56",
+            "category" => 3,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
                 "de" => "50",
             ),
-            "pets" => true,
+            "pets" => false,
             "max-guests" => 4,
             "images" => array(
                 "feature-image" => "DSCF0036.jpg",
@@ -38,6 +39,7 @@
         "yellow" => array(
             "name" => $lang['global']['57'],
             "number" => "57",
+            "category" => 4,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -66,6 +68,7 @@
         "pink" => array(
             "name" => $lang['global']['58'],
             "number" => "58",
+            "category" => 5,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -94,6 +97,7 @@
         "gold" => array(
             "name" => $lang['global']['59'],
             "number" => "59",
+            "category" => 6,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -122,6 +126,7 @@
         "green" => array(
             "name" => $lang['global']['60'],
             "number" => "60",
+            "category" => 7,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -150,12 +155,13 @@
         "grey" => array(
             "name" => $lang['global']['61'],
             "number" => "61",
+            "category" => 8,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
                 "de" => "50",
             ),
-            "pets" => false,
+            "pets" => true,
             "max-guests" => 2,
             "images" => array(
                 "feature-image" => "DSCF9816.jpg",
@@ -178,6 +184,7 @@
         "olive-green" => array(
             "name" => $lang['global']['63'],
             "number" => "63",
+            "category" => 9,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -206,6 +213,7 @@
         "orange" => array(
             "name" => $lang['global']['64'],
             "number" => "64",
+            "category" => 10,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -234,6 +242,7 @@
         "brown" => array(
             "name" => $lang['global']['65'],
             "number" => "65",
+            "category" => 11,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",
@@ -262,6 +271,7 @@
         "burgundy" => array(
             "name" => $lang['global']['66'],
             "number" => "66",
+            "category" => 12,
             "price" => array(
                 "sr" => "100",
                 "en" => "50",

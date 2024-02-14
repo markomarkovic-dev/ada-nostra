@@ -8,7 +8,7 @@ $name = $_GET['name'];
         <div class="section-container">
             <span class="sup-heading"><?= $lang['global']['respected'] . " " . $name ?></span>
             <h2 class="section-heading"><?= $lang[$pagename]['thanks-for-reservation'] ?></h2>
-            <?= $lang[$pagename]['thank-you-text'] . $name ?>
+            <?= $lang[$pagename]['thank-you-text']?>
         </div>
     </section>
 </main>

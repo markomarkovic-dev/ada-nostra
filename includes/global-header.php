@@ -1,6 +1,6 @@
 <?php 
     include('./config.php'); 
-    $checkMetaImg = "$siteUrl/assets/images/cvu-metaimg.png";
+    $checkMetaImg = "$siteUrl/assets/images/adanostra-meta.png";
     $pageTitle = $lang[$pagename]['title'];
     $pageDescription = $lang[$pagename]['description'];
     switch ($language) {
@@ -71,7 +71,7 @@
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 	
 </head>
-<body class="<?= $pagename;?>-page">
+<body class="<?= $pagename;?>-page" <?= isset($apartmentId) ? 'id="'.$apartmentId.'"' : '';?>>
 <?php 
     require 'templates/header.php';
 ?>
