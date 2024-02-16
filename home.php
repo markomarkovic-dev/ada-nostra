@@ -149,12 +149,49 @@
         </div>
    </section>
 </main>
-<?php include('includes/global-footer.php'); ?>
-<?php
+<?php 
+    include 'includes/global-footer.php'; 
     include_once 'components/modal-reservation.php';
 ?>
 
-<script src="assets/js/home.js"></script>
 <script src="assets/js/animate-on-scroll.js"></script>
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>
+<script>
+    $('input[name="dates"], input[name="date-from"], input[name="date-to"], input[name="q-date-from"], input[name="q-date-to"]').daterangepicker( {
+    "timePicker24Hour": true,
+    "singleDatePicker": true,
+    "locale": {
+        "format": 'DD.MM.YYYY',
+        "separator": " - ",
+        "applyLabel": "Potvrdi",
+        "cancelLabel": "Otkaži",
+        "fromLabel": "Od",
+        "toLabel": "Do",
+        "daysOfWeek": [
+            "Po",
+            "Ut",
+            "Sr",
+            "Če",
+            "Pe",
+            "Su",
+            "Ne"
+        ],
+        "monthNames": [
+            "Januar",
+            "Februar",
+            "Mart",
+            "April",
+            "Maj",
+            "Jun",
+            "Jul",
+            "Avgust",
+            "Septembar",
+            "Oktobar",
+            "Novembar",
+            "Decembar"
+        ],
+    },
+    minDate: moment(),
+});
+</script>

@@ -38,9 +38,15 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule images/(.*)$ images/$1
 </IfModule>
 
-<IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-</IfModule>
+<Files "includes/smtp-credentials.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "includes/backend-credentials.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
 
 <IfModule php7_module>
    php_flag display_errors Off

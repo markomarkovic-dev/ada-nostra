@@ -122,3 +122,6 @@
 <script src="assets/js/slideshow.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/gallery-modal.js"></script>
+<?php 
+    include 'components/check-unavailable-dates.php';
+?>

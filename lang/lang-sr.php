@@ -80,7 +80,7 @@
 
 			//email template
 			'mail-respected' => 'Poštovani',
-			'mail-thankyu' => 'Srdačno Vam zahvaljujemo na izboru Ada Nostra Apartmana za vaš predstojeći boravak. Vaša rezervacija je uspešno zaprimljena, i radujemo se što ćemo vam pružiti nezaboravan doživljaj.',
+			'mail-thankyou' => 'Srdačno Vam zahvaljujemo na izboru Ada Nostra Apartmana za vaš predstojeći boravak. Vaša rezervacija je uspešno zaprimljena, i radujemo se što ćemo vam pružiti nezaboravan doživljaj.',
 			'mail-callback' => 'Kako bi vaša rezervacija bila validna, potrebno je da u periodu od naredna 24h izvršite uplatu avansa u iznosu od 50% vaše rezervacije, na naš račun:',
 			'mail-foreign' => 'ili na devizni račun ukoliko se uplata vrši iz inostranstva:',
 			'mail-foreign-data' => 'Banka: <strong>*Neka Banka*<br></strong>Adresa:<strong> *Adresa banke*</strong><br type="_moz">',
@@ -92,9 +92,8 @@
 
 		'home' => array(
 		  	'title' => 'Apartmani', 
-			'description' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima,
-			profesionalna usluga i najbolje opremljeni apartmani.',
-			'ada-apartments-desc' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima, profesionalna usluga i najbolje opremljeni apartmani.',
+			'description' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima. Profesionalna usluga i najbolje opremljeni apartmani.',
+			'ada-apartments-desc' => 'Posvećeni smo pružanju nezaboravnih iskustava gostima. Profesionalna usluga i najbolje opremljeni apartmani.',
 			'book-an-appointment' => 'Rezervišite termin!',
 
 			'our-pleasure' => 'Naš užitak',

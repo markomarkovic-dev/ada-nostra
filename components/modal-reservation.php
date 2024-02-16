@@ -80,6 +80,64 @@ if (isset($_POST['submit'])) {
             
             // Slanje emaila posjetiocu
             $mail->send();
+
+            if(!isset($home)) {
+                /*********** Rezervacija  ************** */
+                // Define the format of the input date
+                $input_date_format = "d.m.Y";
+
+                // Define the desired output format
+                $output_date_format = "Y-m-d\TH:i:s";
+
+                // Create DateTime objects for start and end dates
+                $start_date_obj = DateTime::createFromFormat($input_date_format, $dateFrom);
+                $end_date_obj = DateTime::createFromFormat($input_date_format, $dateTo);
+
+                // Set the time for start and end dates
+                $start_date_obj->setTime(18, 0, 0); // Assuming the start time is 18:00:00
+                $end_date_obj->setTime(23, 0, 0); // Assuming the end time is 23:00:00
+
+                // Format the dates according to the desired output format
+                $start_date = $start_date_obj->format($output_date_format);
+                $end_date = $end_date_obj->format($output_date_format);
+
+                // API endpoint
+                $url = "https://backend.adanostra.com/wp-json/tribe/events/v1/events?categories='.$apartmentId.'";
+
+                // Basic authentication credentials
+                include 'includes/backend-credentials.php';
+
+                // Event data
+                $data = array(
+                    'title' => $name. " - " . $apartmentData[$apartmentId]['name'],
+                    'start_date' => $start_date,
+                    'end_date' => $end_date
+                );
+
+                // Initialize cURL
+                $ch = curl_init();
+
+                // Set cURL options
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                // Set basic authentication headers
+                curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                curl_setopt($ch, CURLOPT_USERPWD, "$wpBackendUsername:$wpBackendPassword");
+
+                // Execute the request
+                $response = curl_exec($ch);
+
+                // Check for errors
+                if(curl_errno($ch)) {
+                    echo 'Error: ' . curl_error($ch);
+                }
+
+                // Close cURL resource
+                curl_close($ch);
+            }
     
             echo "<script>window.location.href = 'thank-you.php?name=$name';</script>";
             exit(); // Zaustavi dalje izvršavanje nakon preusmjeravanja
@@ -103,8 +161,12 @@ if (isset($_POST['submit'])) {
         <div class="modal-content-body">
             <!-- Forma za kontakt -->
             <form method="post" class="contact-form" id="reservation" data-ajax="false">
-                <h4 class="modal-heading-msg"><?= $lang['global']['form-heading-msg'] ?></h4>
-                
+                <?php 
+                    if(isset($home)) {
+                        echo '<h4 class="modal-heading-msg">'.$lang['global']['form-heading-msg'] .'</h4>';
+                    };
+                ?>
+                 
                 <h2><?= $lang['global']['reservation-details'] ?></h2>
                 <div class="form-field-container">
                     <!-- Polja forme -->

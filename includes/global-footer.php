@@ -9,5 +9,5 @@
 		<script src="assets/js/daterangepicker.js"></script>
 		<script src="assets/js/modal.js"></script>
 		<script src="assets/js/scripts.js" type="module"></script>
-		</body>
-		</html>
+</body>
+</html>
