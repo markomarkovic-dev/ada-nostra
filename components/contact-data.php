@@ -5,5 +5,5 @@
     <a href="mailto:rezervacije@adanostra.com"><img src="assets/icons/email.svg" alt=""> rezervacije@adanostra.com</a>
 </div>
 <div class="data-block">
-    <a href="https://maps.app.goo.gl/Se3RmZNr6thFRstM6" target="_blank"><img src="assets/icons/location-small.svg" alt=""> Ada 12A, Banja Luka</a>
+    <a href="https://maps.app.goo.gl/BC1pqEqw3vCeKaCHA" target="_blank"><img src="assets/icons/location-small.svg" alt=""> Ada 12A, Banja Luka</a>
 </div>

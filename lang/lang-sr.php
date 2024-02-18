@@ -174,10 +174,10 @@
 
 	  'thank-you' => array(
 		'title' => 'Hvala vam!', 
-	  'description' => 'Srdačno hvala na poverenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima.', 
+	  'description' => 'Srdačno hvala na povjerenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima.', 
 	  'thanks-for-reservation' => 'HVALA NA REZERVACIJI!',
-	  'thank-you-text' => '<p class="section-desc">Srdačno hvala na poverenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima. Vaša rezervacija je uspešno primljena, i jedva čekamo da vam pružimo nezaboravan doživljaj.</p>
-	  <p class="section-desc">Očekujte e-mail sa instrukcijama. Ukoliko imate bilo kakvih dodatnih pitanja ili posebnih zahteva, slobodno nas kontaktirajte. Naša ekipa je tu da vam pomogne i osigura da vaš boravak bude ugodan.</p>
+	  'thank-you-text' => '<p class="section-desc">Srdačno hvala na povjerenju koje ste nam ukazali rezervišući boravak u Ada Nostra apartmanima. Vaša rezervacija je uspješno primljena, i jedva čekamo da vam pružimo nezaboravan doživljaj.</p>
+	  <p class="section-desc">Očekujte e-mail sa instrukcijama. Ukoliko imate bilo kakvih dodatnih pitanja ili posebnih zahtjeva, slobodno nas kontaktirajte. Naša ekipa je tu da vam pomogne i osigura da vaš boravak bude ugodan.</p>
 	  <p class="section-desc"><strong>S poštovanjem,<br>Ada Nostra Tim</strong></p>',
   ),
 
