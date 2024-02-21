@@ -7,14 +7,10 @@
 <main>
     <section class="landing">
         <div class="section-container">
-            <div class="split-slideshow main-slider">
-                <div class="slideshow">
-                <div class="slider">
-                    <?php
-                        landingSlider($homeSlider, "main");
-                    ?>
-                </div>
-            </div>
+            <div class="owl-carousel main-slider">
+                <?php
+                    landingSlider($homeSlider, "main");
+                ?>
             </div>
             <div class="reservation-container">
                 <div class="quick-reservation">
@@ -153,9 +149,8 @@
     include 'includes/global-footer.php'; 
     include_once 'components/modal-reservation.php';
 ?>
-
 <script src="assets/js/animate-on-scroll.js"></script>
-<script src="assets/js/slideshow.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script>
     $('input[name="dates"], input[name="date-from"], input[name="date-to"], input[name="q-date-from"], input[name="q-date-to"]').daterangepicker( {
@@ -194,4 +189,13 @@
     },
     minDate: moment(),
 });
+
+    $('.main-slider').owlCarousel({
+        loop:true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        margin:10,
+        responsiveClass:true,
+        items: 1,
+    })
 </script>

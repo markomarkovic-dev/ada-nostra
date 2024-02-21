@@ -7,14 +7,10 @@
 <main>
     <section class="landing">
         <div class="section-container">
-            <div class="split-slideshow main-slider">
-                <div class="slideshow">
-                    <div class="slider">
-                        <?php
-                            landingSlider($apartmentData[$apartmentId]["images"]["slider"], "$apartmentId");
-                        ?>
-                    </div>
-                </div>
+            <div class="owl-carousel main-slider">
+                <?php
+                    landingSlider($apartmentData[$apartmentId]["images"]["slider"], "$apartmentId");
+                ?>
             </div>
             <div class="apartment-data-container">
                 <?= apartmentDrawer($apartmentId, true); ?>
@@ -117,11 +113,19 @@
     include 'includes/global-footer.php'; 
     include_once 'components/modal-reservation.php';
 ?>
-
 <script src="assets/js/animate-on-scroll.js"></script>
-<script src="assets/js/slideshow.js"></script>
-<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/gallery-modal.js"></script>
 <?php 
     include 'components/check-unavailable-dates.php';
 ?>
+<script>
+    $('.main-slider').owlCarousel({
+        loop:true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        margin:10,
+        responsiveClass:true,
+        items: 1,
+    })
+</script>

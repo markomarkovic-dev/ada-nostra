@@ -63,8 +63,8 @@
     <link href="assets/fonts/stylesheet.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0d4485daf8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/daterangepicker.css">
-    <link rel="stylesheet" href="assets/css/slick.min.css">
-    <link rel="stylesheet" href="assets/css/slick-theme.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/scss/main.css">
 
 	<?php 

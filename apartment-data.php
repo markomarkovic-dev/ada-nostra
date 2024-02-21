@@ -1,9 +1,11 @@
 <?php 
     $homeSlider = array(
-        "DSCF9831.jpg",
-        "DSCF9851.jpg",
-        "DSCF9913.jpg",
-        "DSCF9816.jpg",
+        "1A.jpg",
+        "2A.jpg",
+        "3A.jpg",
+        "4a.jpg",
+        "5a.jpg",
+        "7a.jpg",
     );
 
     $apartmentData = array(

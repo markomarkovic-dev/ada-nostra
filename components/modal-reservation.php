@@ -81,7 +81,8 @@ if (isset($_POST['submit'])) {
             // Slanje emaila posjetiocu
             $mail->send();
 
-            if(!isset($home)) {
+            $apartmentPick = isset($home) ? "Apartman nije odabran" : $apartmentData[$apartmentId]['name'];
+
                 /*********** Rezervacija  ************** */
                 // Define the format of the input date
                 $input_date_format = "d.m.Y";
@@ -102,14 +103,18 @@ if (isset($_POST['submit'])) {
                 $end_date = $end_date_obj->format($output_date_format);
 
                 // API endpoint
-                $url = "https://backend.adanostra.com/wp-json/tribe/events/v1/events?categories='.$apartmentId.'";
+                if (isset($home)) {
+                    $url = "https://backend.adanostra.com/wp-json/tribe/events/v1/events";
+                } else {
+                    $url = "https://backend.adanostra.com/wp-json/tribe/events/v1/events?categories='.$apartmentId.'";
+                }
 
                 // Basic authentication credentials
                 include 'includes/backend-credentials.php';
 
                 // Event data
                 $data = array(
-                    'title' => $name. " - " . $apartmentData[$apartmentId]['name'],
+                    'title' => $name. " - " . $apartmentPick,
                     'start_date' => $start_date,
                     'end_date' => $end_date
                 );
@@ -137,7 +142,6 @@ if (isset($_POST['submit'])) {
 
                 // Close cURL resource
                 curl_close($ch);
-            }
     
             echo "<script>window.location.href = 'thank-you.php?name=$name';</script>";
             exit(); // Zaustavi dalje izvršavanje nakon preusmjeravanja
