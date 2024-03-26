@@ -359,7 +359,7 @@ main {
     }
 
     .apartment-eye {
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -370,10 +370,6 @@ main {
         span {
             font-size: 1.8rem;
             color: rgba($c-blue-light, .5);
-        }
-
-        @media(min-width: 992px) {
-            display: none;
         }
     }
 
@@ -437,6 +433,7 @@ main {
 .gallery-item {
     cursor: pointer;
     aspect-ratio: 41/38;
+    
     &:hover {
         .feature-image, .gallery-item {
             // filter: grayscale(0);

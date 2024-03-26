@@ -1,0 +1,27 @@
+"applyLabel": "Apply",
+"cancelLabel": "Cancel",
+"fromLabel": "From",
+"toLabel": "To",
+"daysOfWeek": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
+],
+"monthNames": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+],

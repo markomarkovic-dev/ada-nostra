@@ -1,13 +1,8 @@
-"timePicker24Hour": true,
-"singleDatePicker": true,
-"locale": {
-    "format": 'DD.MM.YYYY',
-    "separator": " - ",
-    "applyLabel": "Potvrdi",
-    "cancelLabel": "Otkaži",
-    "fromLabel": "Od",
-    "toLabel": "Do",
-    "daysOfWeek": [
+"applyLabel": "Potvrdi",
+        "cancelLabel": "Otkaži",
+        "fromLabel": "Od",
+        "toLabel": "Do",
+"daysOfWeek": [
         "Po",
         "Ut",
         "Sr",
@@ -29,6 +24,4 @@
         "Oktobar",
         "Novembar",
         "Decembar"
-    ],
-},
-minDate: moment(),
+],

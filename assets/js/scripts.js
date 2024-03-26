@@ -25,38 +25,6 @@ $(document).ready(function ($) {
     }
   });
 
-  function checkGuestPrice(guestNumber) {
-    $('#currency, #price-label').removeClass("hidden");
-    if(document.documentElement.lang === "sr") {
-      if($(guestNumber).val() == "3") {
-        $("#price #price-number").text("130");
-      } else if($(guestNumber).val() == "4"){
-        $("#price #price-number").text("160");
-      } else if(parseInt($(guestNumber).val()) > 4){
-        $("#price #price-number").text("Cijena po dogovoru");
-        $('#currency, #price-label').addClass("hidden");
-      } else if($(guestNumber).val() == "1" || $(guestNumber).val() == "2"){
-        $("#price #price-number").text("100");
-      }
-    } else {
-      if($(guestNumber).val() == "3") {
-        $("#price #price-number").text("66,50");
-      } else if($(guestNumber).val() == "4"){
-        $("#price #price-number").text("81.80");
-      } else if(parseInt($(guestNumber).val()) > 4){
-        if(langAttribute === "de") {
-          $("#price #price-number").text("Preis nach Vereinbarung");
-        } else if(langAttribute === "en") {
-          $("#price #price-number").text("Price by agreement");
-        }
-        
-        $('#currency, #price-label').addClass("hidden");
-      } else if($(guestNumber).val() == "1" || $(guestNumber).val() == "2"){
-        $("#price #price-number").text("50");
-      }
-    }
-  }
-
   const menuSwitch = document.querySelector(".menu-switch");
   const mobileMenu = document.querySelector(".header-container");
   const htmlSel = document.querySelector("html");
@@ -84,8 +52,27 @@ $(document).ready(function ($) {
     $("#q-guest-count option").filter(function() {
       return $(this).text() === $("#guest-count").val();
     }).prop('selected', true);
-      checkGuestPrice($("#q-guest-count"));
     })
+
+// Funkcija za dobivanje prevoda na temelju jezika
+function getDatepickerTranslation(label) {
+  var lang = document.documentElement.lang;
+  var translations = {
+      "sr": {
+          "applyLabel": "Potvrdi",
+          "cancelLabel": "Otkaži",
+      },
+      "en": {
+          "applyLabel": "Apply",
+          "cancelLabel": "Cancel",
+      },
+      "de": {
+          "applyLabel": "Anwenden",
+          "cancelLabel": "Abbrechen",
+      }
+  };
+  return translations[lang][label];
+}
 
   $('#expected-checkin').daterangepicker({
     timePicker: true,
@@ -94,15 +81,11 @@ $(document).ready(function ($) {
     "singleDatePicker": true,
     locale: {
         format: 'HH:mm',
-        "applyLabel": "Potvrdi",
-        "cancelLabel": "Otkaži",
+        applyLabel: getDatepickerTranslation("applyLabel"),
+        cancelLabel: getDatepickerTranslation("cancelLabel"),
     }
   }).on('show.daterangepicker', function (ev, picker) {
-  picker.container.find(".calendar-table").hide();
-  });
-
-  $("#guest-count").change(function(){
-    checkGuestPrice(this);
+    picker.container.find(".calendar-table").hide();
   });
 });
 

@@ -161,7 +161,7 @@ if (isset($_POST['submit'])) {
 <!-- HTML Forma -->
 <div class="modal <?= $modalPrikaz ?>" data-modal="reservation">
     <div class="modal-content">
-        <i class="fa-solid fa-xmark modal-close"></i>
+        <img src="assets/icons/x.svg" class="modal-close" alt="">
         <div class="modal-content-body">
             <!-- Forma za kontakt -->
             <form method="post" class="contact-form" id="reservation" data-ajax="false">
@@ -239,8 +239,12 @@ if (isset($_POST['submit'])) {
                             <input type="text" name="company" id="company">
                         </div>
                     </div>
-                    <?= isset($home) ? '' : "<p class='chosen-apartment'><span>" . $apartmentData[$apartmentId]['name'] . "</span></p>"?></p>
-                    <p id="price"><span id="price-label"><?= $lang['global']['price'] ?>:</span> <span id="price-number"><?= isset($home) ? '50' : $apartmentData[$apartmentId]['price'][$language]; ?></span><span id="currency"><?= $lang["global"]["currency"] ?></span</p>
+                    <?php 
+                        if (!isset($home)) {
+                            echo "<p class='chosen-apartment'><span>" . $apartmentData[$apartmentId]['name'] . "</span></p>";
+                            echo '<p id="price"><span id="price-label">'.$lang['global']['price'].'</span><span id="price-number">: '.$apartmentData[$apartmentId]['price'][$language].'</span><span id="currency">'.$lang['global']['currency'].'</span></p>';
+                        }
+                    ?>
                 </div>
                     
                 </div>

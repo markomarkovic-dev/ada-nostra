@@ -61,7 +61,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     <link href="assets/fonts/stylesheet.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/0d4485daf8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/daterangepicker.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">

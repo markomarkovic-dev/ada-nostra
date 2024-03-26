@@ -406,7 +406,7 @@ main {
   height: 100%;
 }
 .apartment-block .apartment-eye {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -417,11 +417,6 @@ main {
 .apartment-block .apartment-eye span {
   font-size: 1.8rem;
   color: rgba(0, 79, 172, 0.5);
-}
-@media (min-width: 992px) {
-  .apartment-block .apartment-eye {
-    display: none;
-  }
 }
 .apartment-block-blue, .apartment-block-yellow {
   background-size: 600% 600% !important;

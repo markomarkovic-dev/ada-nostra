@@ -151,7 +151,6 @@
 ?>
 <script src="assets/js/animate-on-scroll.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/slick.min.js"></script>
 <script>
     $('input[name="dates"], input[name="date-from"], input[name="date-to"], input[name="q-date-from"], input[name="q-date-to"]').daterangepicker( {
     "timePicker24Hour": true,
@@ -159,33 +158,9 @@
     "locale": {
         "format": 'DD.MM.YYYY',
         "separator": " - ",
-        "applyLabel": "Potvrdi",
-        "cancelLabel": "Otkaži",
-        "fromLabel": "Od",
-        "toLabel": "Do",
-        "daysOfWeek": [
-            "Po",
-            "Ut",
-            "Sr",
-            "Če",
-            "Pe",
-            "Su",
-            "Ne"
-        ],
-        "monthNames": [
-            "Januar",
-            "Februar",
-            "Mart",
-            "April",
-            "Maj",
-            "Jun",
-            "Jul",
-            "Avgust",
-            "Septembar",
-            "Oktobar",
-            "Novembar",
-            "Decembar"
-        ],
+        <?php
+            include 'lang/datepicker-'.$language.'.php';
+        ?>
     },
     minDate: moment(),
 });
